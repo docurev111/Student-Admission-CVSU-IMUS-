@@ -11,5 +11,9 @@ TUTORIAL
   -git init
   
   -git remote add origin "https://github.com/docurev111/Student-Admission-CVSU-IMUS-"
+
+  -git config --global user.email "(kung ano email mo)"
+
+  -git config --global user.name "(username mo sa github)"
   
   -git pull origin main (to see updated files)
