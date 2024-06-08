@@ -5,3 +5,10 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+@media (max-width: 991px) {
+	.sidebar {
+		background-color: aqua;
+		backdrop-filter: blur(10px);
+	}
+}
