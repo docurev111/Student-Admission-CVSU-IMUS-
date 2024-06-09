@@ -74,11 +74,12 @@
                         <div class="header-text mb-4">
                             <h2>Login as a student</h2>
                         </div>
+                        <form action="login.php" method="POST">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" name = "email"/>
                         </div>
                         <div class="input-group mb-1">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name = "password"/>
                         </div>
                         <div class="input-group mb-5 d-flex justify-content-between">
                             <div class="form-check">
@@ -99,6 +100,7 @@
                 </div>
             </div>
         </div>
+    </form>
     </section>
 </main>
 
