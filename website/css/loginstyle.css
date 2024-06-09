@@ -1,5 +1,5 @@
 body {
-	background: url('images/schoolbg.png');
+	background: url('../images/schoolbg.png');
 	background-blend-mode: multiply;
 	background-position: center;
 	background-size: cover;
