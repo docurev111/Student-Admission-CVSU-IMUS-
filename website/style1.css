@@ -7,8 +7,8 @@
 
 body  {
 	height: 100vh;
-	background-color: #000;
-	background-image: url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-color: white;
+	background-image: url('images/schoolbg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -21,8 +21,9 @@ li {
 
 
 a{
-	text-decoration:none;
-	color:#fff;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-decoration: none;
+	color:#000;
 	font-size: 1rem;
 
 }
