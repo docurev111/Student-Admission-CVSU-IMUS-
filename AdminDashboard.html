@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Admin Dashboard</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="css/AdminDB.css">
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class='bx bxl-postgresql'></i>
+                    <span>CvSU</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <p>Admin</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-dashboard' ></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-file-blank'></i>
+                        <span class="nav-item">Admission</span>
+                    </a>
+                    <span class="tooltip">Admission</span>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-bell-ring'></i>
+                        <span class="nav-item">Announcement</span>
+                    </a>
+                    <span class="tooltip">Announcement</span>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-edit-alt'></i>
+                        <span class="nav-item">Change Password</span>
+                    </a>
+                    <span class="tooltip">Change Password</span>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-exit' ></i>
+                        <span class="nav-item">Logout</span>
+                    </a>
+                    <span class="tooltip">Logout</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="container">
+                <h1> TRY HIASFIASFASJFA</h1>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let btn = document.querySelector('#btn')
+        let sidebar = document.querySelector('.sidebar')
+
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        };
+    </script>
+</html>
