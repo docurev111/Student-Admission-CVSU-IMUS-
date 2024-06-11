@@ -126,8 +126,9 @@
     line-height: 1.8rem;
     z-index: 20;
     opacity: 0;
-    background-color: #AFCAA9;
-    color: #303030;
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid;
 }
 
 .sidebar ul li a:hover + .tooltip {
@@ -156,6 +157,17 @@
     background-color: #AFCAA9;
     min-height: 70px;
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.toplogo {
+    left: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
 }
 
 .container {
@@ -172,8 +184,7 @@
     display: grid;
     grid-template-rows: repeat(15, 35px);
     grid-template-columns: repeat(auto-fit, minmax(calc(100% / 9), 1fr)); /* Responsive columns */
-    margin: 0 auto;
-    border: 2px solid #000; /* Example border size and color */
+    margin: 0 auto; 
     height: 81vh;
 }
 .card {
@@ -185,6 +196,7 @@
     margin: 3px 5px;
     border-radius: 5px;
     background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .textcontent {
