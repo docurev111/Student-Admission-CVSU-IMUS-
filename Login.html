@@ -6,37 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+	<link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
 	integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
-	crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	crossorigin="anonymous" 
+    referrerpolicy="no-referrer"/>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous"/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous">
     </script>
 
+<<<<<<< HEAD
 	<link rel="stylesheet" href="css/login.css"/>
 	<title>Nav Bar</title>
+=======
+    <link rel="shortcut icon" type="image/x-icon" href="image/schoolicon.ico">
+    <link rel="stylesheet" href="css/navbar.css"/>
+	<link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+	<title>Login - Cavite State University Imus Campus</title>
+>>>>>>> 750efa6d8098fd55828e76eeb8d6b14bb63148d6
 </head>
 <body>
 <header>
 	<div class = "navbar">
 		<div class = "logo">
 				<a href="#">
-					<img src="images/schoolname.png" alt="Cavite State University Logo" style="width: 100x; height: 49px;">
+					<img class = "icon"
+                    img src="images/schoolname.png" 
+                    alt="Cavite State University Logo" 
+                    style="width: 100x; height: 49px;">
 			</a>
 		</div>
 		<ul class = "links">
-		<li><a href="hero">Home</a></li>
-		<li><a href="about">About CVSU</a></li>
-		<li><a href="admissions">Admissions</a></li>
-		<li><a href="academics">Academics</a></li>
-		<li><a href="contacts">Contacts</a></li>
+		<li><a href="hero"><i class="fas fa-home">&nbsp;</i>Home</a></li></ion-icon>
+		<li><a href="about"><i class="fa fa-question-circle" aria-hidden="true">&nbsp;</i>About CVSU</a></li>
+		<li><a href="admissions"><i class="fa fa-book" aria-hidden="true">&nbsp;</i>Admissions</a></li>
+		<li><a href="academics"><i class="fa fa-graduation-cap" aria-hidden="true">&nbsp;</i>Academics</a></li>
+		<li><a href="contacts"><i class="fa fa-phone" aria-hidden="true">&nbsp;</i>Contacts</a></li>
 		</ul>
 	<a href = "#" class = "action_btn">Get Started</a>
 	<div class = "toggle_btn">
@@ -44,62 +65,83 @@
 	</div>
 	</div>
 
-	<div class = "dropdown_menu">
-		<li><a href="hero">Home</a></li>
-		<li><a href="about">About CVSU</a></li>
-		<li><a href="admissions">Admissions</a></li>
-		<li><a href="academics">Academics</a></li>
-		<li><a href="contacts">Contacts</a></li>
-		<li><a href = "#" class = "action_btn">Get Started</a></li>
-	</div>
-</header>
-
 <main>
-    <section id="hero">
-        <!----------------------- Main Container -------------------------->
-        <div class="container d-flex justify-content-center align-items-center min-vh-100">
-            <!----------------------- Login Container -------------------------->
-            <div class="row border rounded-5 p-3 bg-white shadow box-area" style="max-width: 1000px; width: 100%;">
-                <!--------------------------- Left Box ----------------------------->
-                <div class="col-md-7 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #9BA79C;">
-                    <div class="featured-image mb-3">
-                        <img src="images/people.png" class="img-fluid" style="width: 400px;">
-                    </div>
-                    <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;"></p>
-                    <small class="text-white text-wrap text-center" style="width: 17rem; font-family: 'Courier New', Courier, monospace;"></small>
-                </div>
-                <!--------------------------- Right Box ----------------------------->
-                <div class="col-md-5 right-box">
-                    <div class="row align-items-center">
-                        <div class="header-text mb-4">
-                            <h2>Login as a student</h2>
-                        </div>
-                        <form action="login.php" method="POST">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" name = "email"/>
-                        </div>
-                        <div class="input-group mb-1">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name = "password"/>
-                        </div>
-                        <div class="input-group mb-5 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
-                            </div>
-                            <div class="forgot">
-                                <small><a href="#">Forgot Password?</a></small>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
-                        </div>
-                        <div class="row">
-                            <small>Don't have account? <a href="#">Sign Up</a></small>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+                    <img class = "logo" img src="images/schoolicon.png" alt="logo-top-left">
+                    <div class="text">
+                            <p><i></i></p>
                         </div>
                     </div>
+                    
+                <div class="col-md-6 right">
+                    <div class="input-box">
+                       <header>Login as a student</header>
+                       <div class="input-field">
+                            <input type="text" class="input" id="email" required="" autocomplete="off">
+                            <label for="email">Email</label> 
+                        </div> 
+                       <div class="input-field">
+                            <input type="password" class="input" id="pass" required="">
+                            <label for="pass">Password</label>
+                        </div> 
+                       <div class="input-field">
+                            
+                            <input type="submit" class="submit" value="Login">
+                       </div> 
+                       <div class="signin">
+                        <span>Don't have an account? <a href="#">Register Here</a></span>
+                       </div>
+                    </div>
+                    </div>
+                    <div class = "dropdown_menu">
+                        <li><a href="hero">Home</a></li>
+                        <li><a href="about">About CVSU</a></li>
+                        <li><a href="admissions">Admissions</a></li>
+                        <li><a href="academics">Academics</a></li>
+                        <li><a href="contacts">Contacts</a></li>
+                        <li><a href = "#" class = "action_btn">Get Started</a></li>
+            </div> 
+        </div>  
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-icon">
+                    <img src="images/gov1.png">
                 </div>
-            </div>
-        </div>
+                <div class="footer-col">
+                    <h4>GOVERNMENT LINKS</h4>
+                    <ul>
+                        <li><a href="#">Government PH</a></li>
+                        <li><a href="#">CHED</a></li>
+                        <li><a href="#">DOST</a></li>
+                        <li><a href="#">Cavite PH</a></li>
+                        <li><a href="#">Imus City</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="#">Admission Procedures</a></li>
+                        <li><a href="#">Academic Programs</a></li>
+                        <li><a href="#">News And Updates</a></li>
+                        <li><a href="#">Careers @ CvSU</a></li>
+                        <li><a href="#">Downloadable Forms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT INFORMATION</h4>
+                    <p style="color: #bbbbbb; margin-left: 23px;">Cavite Civic Center, Palico IV,</p>
+                    <p style="color: #bbbbbb; margin-left: 23px;">Imus City, Cavite 4103</p>
+                    <p style="color: #bbbbbb; margin-left: 23px;">Admin: (046) 471-6607</p>
+                    <p style="color: #bbbbbb; margin-left: 23px;">Registrar: (046) 436-6584</p>
+                </div>
+   </footer>
     </form>
     </section>
 </main>
