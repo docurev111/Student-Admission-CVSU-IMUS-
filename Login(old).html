@@ -20,7 +20,8 @@
     crossorigin="anonymous">
     </script>
 
-	<link rel="stylesheet" href="css/loginwnavbar.css"/>
+	<link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="footer.css"/>
 	<title>Nav Bar</title>
 </head>
 <body>
@@ -74,11 +75,12 @@
                         <div class="header-text mb-4">
                             <h2>Login as a student</h2>
                         </div>
+                        <form action="login.php" method="POST">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" name = "email"/>
                         </div>
                         <div class="input-group mb-1">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name = "password"/>
                         </div>
                         <div class="input-group mb-5 d-flex justify-content-between">
                             <div class="form-check">
@@ -99,6 +101,46 @@
                 </div>
             </div>
         </div>
+    </form>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>GOVERNMENT LINKS</h4>
+                    <ul>
+                        <li><a href="#">Government PH</a></li>
+                        <li><a href="#">CHED</a></li>
+                        <li><a href="#">DOST</a></li>
+                        <li><a href="#">Cavite PH</a></li>
+                        <li><a href="#">Imus City</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="#">Admission Procedures</a></li>
+                        <li><a href="#">Academic Programs</a></li>
+                        <li><a href="#">News And Updates</a></li>
+                        <li><a href="#">Careers @ CvSU</a></li>
+                        <li><a href="#">Downloadable Forms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT INFORMATION</h4>
+                    <p style="color: #bbbbbb;">Cavite Civic Center, Palico IV,</p>
+                    <p style="color: #bbbbbb;">Imus City, Cavite 4103</p>
+                    <p style="color: #bbbbbb;">Admin: (046) 471-6607</p>
+                    <p style="color: #bbbbbb;">Registrar: (046) 436-6584</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+</div>
+</div>
+   </footer>
+    </form>
     </section>
 </main>
 
