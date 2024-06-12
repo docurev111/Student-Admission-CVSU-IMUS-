@@ -10,7 +10,7 @@
     left: 0;
     height: 100vh;
     width: 80px;
-    background-color: #4f7c44ea;
+    background-color: #176e01ea;
     padding: .4rem .8rem;
     transition: all 0.5s ease;
     font-weight: 1000;
@@ -56,6 +56,7 @@
 .top .logo i{
     font-size: 2rem;
 }
+
 .user {
     display: flex;
     align-items: center;
@@ -79,7 +80,7 @@
     list-style-type: none;
     height: 50px;
     width: 90%;
-    margin: 0.8 rem auto;
+    margin: 0.8rem auto; /* Fixed margin issue */
     line-height: 50px;
 }
 
@@ -125,20 +126,20 @@
     line-height: 1.8rem;
     z-index: 20;
     opacity: 0;
-    background-color: #AFCAA9;
-    color: #303030;
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid;
 }
 
 .sidebar ul li a:hover + .tooltip {
     opacity: 1;
 }
 
-
 .sidebar.active ul li .tooltip {
-   display: none;
+    display: none;
 }
 
-.main-content{
+.main-content {
     position: relative;
     min-height: 100vh;
     left: 80px;
@@ -147,13 +148,32 @@
     z-index: 1;
 }
 
+.sidebar.active ~ .main-content {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
 .tophead {
-    background-color: #AFCAA9;
+    background-color: #4f7c44ea;
     min-height: 70px;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
+
+.toplogo {
+    left: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 180px;
+}
+
 .container {
-    background-color: #ECE8E8;
-    height:89.5vh;
-    
+    position: relative;
+    background-color: #dad6d6;
+    height: 89.5vh;
+    width: 100%;
+    overflow: hidden;
 }
