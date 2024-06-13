@@ -3,6 +3,13 @@ body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -19,27 +26,17 @@ body{
 ul{
 	list-style: none;
 }
-.footer{
-	background-color: #1a1a1a;
+.footer {
+    background-color: #1a1a1a;
     color: #ffffff;
-    padding: 70px 0;
-	background: inherit;
-    background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
+    padding: 20px 0; 
+    background-image: url('../images/footerbgg.png'); 
     background-size: cover;
     background-position: center;
-	width: 100%;
-	position: relative;
-}
-.footer-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+    margin-top: 30px;
+    height: auto; 
+	box-sizing: border-box; 
 }
 
 .footer-col{
@@ -48,10 +45,9 @@ ul{
 }
 .footer-col h4{
 	font-size: 18px;
+	margin-top: 40px;
 	color: #ffffff;
 	text-transform: capitalize;
-	margin-top: 30px;
-	margin-bottom: 20px;
 	margin-left: 30px;
 	font-weight: 500;
 	position: relative;
@@ -60,14 +56,14 @@ ul{
 img.footer-logo{
 	text-align: center;
 	width: 250px;
-	height: 120px;
-	margin-bottom:
+	height: 30vh;
+	margin-top: 30px;
 }
 
-img.footer-icon{
+img.footer-icon {
 	margin-top: 40px;
-	width: 150px;
-	height: 150px;
+    width: 180px;
+    height: auto;
 }
 .footer-col h4::before{
 	content: '';
