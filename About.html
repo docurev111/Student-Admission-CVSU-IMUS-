@@ -33,34 +33,43 @@
     <link rel="shortcut icon" type="image/x-icon" href="image/schoolicon.ico">
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/about.css"/>
-	<link rel="stylesheet" href="css/login.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
 	<title>About - Cavite State University Imus Campus</title>
 </head>
 <body>
 <header>
-	<div class = "navbar">
-		<div class = "logo">
-				<a href="#">
-					<img class = "icon"
+	<div class="headerContainer">
+        <header class="nav-header">
+            <div class="navbar">
+                <div class="logo"><a href="#">
+                    <img class = "nav_logo"
                     img src="images/schoolname.png" 
-                    alt="Cavite State University Logo" 
-                    style="width: 100x; height: 49px;">
-			</a>
-		</div>
-		<ul class = "links">
-		<li><a href="hero"><i class="fas fa-home">&nbsp;</i>Home</a></li></ion-icon>
-		<li><a href="about"><i class="fa fa-question-circle" aria-hidden="true">&nbsp;</i>About CVSU</a></li>
-		<li><a href="admissions"><i class="fa fa-book" aria-hidden="true">&nbsp;</i>Admissions</a></li>
-		<li><a href="academics"><i class="fa fa-graduation-cap" aria-hidden="true">&nbsp;</i>Academics</a></li>
-		<li><a href="contacts"><i class="fa fa-phone" aria-hidden="true">&nbsp;</i>Contacts</a></li>
-		</ul>
-	<a href = "#" class = "action_btn">Get Started</a>
-	<div class = "toggle_btn">
-		<i class="fa-solid fa-bars"></i>
-	</div>
-	</div>
+                    alt="Cavite State University Logo" >
+                </a></div>
+                <ul class="links">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT CVSU</a></li>
+                    <li><a href="#">ADMISSION</a></li>
+                    <li><a href="#">ACADEMICS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+                <a href="" class="action_button">Get Started</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+                
+            </div> 
 
+            <div class="dropdown_menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT CVSU</a></li>
+                <li><a href="#">ADMISSION</a></li>
+                <li><a href="#">ACADEMICS</a></li>
+                <li><a href="#">CONTACTS</a></li>
+                <li><a href="" class="action_button">Get Started</a></li>
+            </div></div>
+</header>
 <main>
     <div class = "heading">
         <h1>About Us</h1>
@@ -101,8 +110,8 @@
                                     Optio officia, dignissimos provident eligendi, pariatur quis, explicabo odio sit aspernatur ipsa tempore repellendus sint voluptate nesciunt.</h2>
                             </div>
                             </section>
-                            </div>
-        </section>
+                        </div>
+                        </main>
     </div>
     </div>
 </div>
@@ -143,8 +152,6 @@
    </footer>
     </form>
     </section>
-</main>
-
 <script>
 const toggleBtn = document.querySelector('.toggle_btn')
 const toggleBtnIcon = document.querySelector('.toggle_btn i')
@@ -152,12 +159,25 @@ const dropDownMenu = document.querySelector('.dropdown_menu')
 
 toggleBtn.onclick = function () {
 	dropDownMenu.classList.toggle('open')
-	const isOpen = dropDownMenu.classlist.contains('open')
+	const isOpen = dropDownMenu.classList.contains('open')
 
 	toggleBtnIcon.classlist = isOpen
 		? "fa-solid fa-xmark"
 		: "fa-solid fa-bars"
 }
+
+
 </script>
+<script>
+    window.addEventListener('scroll', function () {
+    var header = document.querySelector('.nav-header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
+
 </body>
 </html>
