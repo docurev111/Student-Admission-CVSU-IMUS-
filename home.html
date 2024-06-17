@@ -18,56 +18,158 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"/>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
     <title>Homepage</title>
 
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive Web Page</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="brand-logo">
-                <img src="/images/schoolname.png" alt="Logo">
-            </div>
-            <a href="javascript:void(0);" class="toggle-button" onclick="toggleNavbar()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <div class="headerContainer">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">
+                    <img class = "nav_logo"
+                    img src="images/schoolname.png" 
+                    alt="Cavite State University Logo" >
+                </a></div>
+                <ul class="links">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT CVSU</a></li>
+                    <li><a href="#">ADMISSION</a></li>
+                    <li><a href="#">ACADEMICS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
                 </ul>
+                <a href="" class="action_button">Get Started</a>
+                    <!-- <button class="btnLogin-popup"><a href="#">Login</a></button> -->
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
-        </nav>
-        <div id="home__bg" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item carousel-image bg-image-1 active">
-                  <img src="/images/1bg1.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item carousel-image bg-image-2">
-                  <img src="/images/1bg2.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item carousel-image bg-image-3">
-                  <img src="/images/1bg3.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="home__shadow"></div>
-              </div>
-        <div class="content">
-            <h1>Welcome to Our Website</h1>
-            <p>This is a responsive web page with an autoplay slideshow background image.</p>
-        </div>
+                
+            </div> 
 
+            <div class="dropdown_menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT CVSU</a></li>
+                <li><a href="#">ADMISSION</a></li>
+                <li><a href="#">ACADEMICS</a></li>
+                <li><a href="#">CONTACTS</a></li>
+                <li><a href="" class="action_button">Get Started</a></li>
+            </div>
+
+            <div class="container">
+                <div class="display">
+                    <div class="card">
+                        
+                        <div class="card-content">
+                            <div class="icon">🎓</div>
+                            <h4>Card Title 1</h4>
+                            <p>Some description about card 1.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
     
+                        </div>
+                        <div class="card-content">
+                            <div class="icon">📚</div>
+                            <h4>Card Title 2</h4>
+                            <p>Some description about card 2.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+    
+                        </div>
+                        <div class="card-content">
+                            <div class="icon">📄</div>
+                            <h4>Card Title 2</h4>
+                            <p>Some description about card 2.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+    
+                        </div>
+                        <div class="card-content">
+                            <div class="icon">✏️</div>
+                            <h4>Card Title 2</h4>
+                            <p>Some description about card 2.</p>
+                        </div>
+                    </div>
+                    <!-- Add more cards as needed -->
+                </div>
+            </div>
+        </header>
+        
+
+        
+
+
+    <!-- <div class="display"> 
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="icon"><i class="ri-graduation-cap-fill"></i>
+                    <h4>STUDENTS</h4>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <div class="icon"><i class="ri-graduation-cap-fill"></i>
+                    <h4>STUDENTS</h4>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <div class="icon"><i class="ri-graduation-cap-fill"></i>
+                <h4>STUDENTS</h4>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <div class="icon"><i class="ri-graduation-cap-fill"></i>
+                <h4>STUDENTS</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+        
+    <br>
+    <!--Header/Nav end-->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+    
+        toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+    </script>
 <script src="/css/main.js"></script>
+
+
 </body>
 </html>
