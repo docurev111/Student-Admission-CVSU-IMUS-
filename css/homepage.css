@@ -54,16 +54,17 @@
 
 
 
-.headerContainer {
+.bgc {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     height: 100vh;
     width: 100%;
     background-image: url(/images/1bg1.png);
     background-size: cover;
     background-position: center;
     animation: animate1 30s ease-in-out infinite;
+    position: relative;
 }
 
 @keyframes animate1 {
@@ -261,13 +262,49 @@ li{
     font-size: 1rem;
 }
 
-/* CARDS */
-.container {
-    padding: 20px;
+
+
+CARDS */
+.card {
+    justify-content: center;
+    align-items: flex-end;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
-/* Display Flex Container */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-content {
+    text-align: center;
+    padding: 1.5rem 1rem;
+
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* .container {
+    background-size: cover;
+    padding: 20px;
+    min-height: 100vh; 
+
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    position: relative;
+} 
+
 .display {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -276,9 +313,9 @@ li{
     
 }
 
-/* Card Styles */
+
 .card {
-    
+    margin-top: -200px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -297,10 +334,7 @@ li{
 
 
 
-/* Card Content */
 .card-content {
-    position: absolute;
-    
     padding: 10px;
 }
 
@@ -311,22 +345,33 @@ li{
 }
 
 h4 {
-    font-size: 1.2rem;
+    font-size: .899rem;
     color: #3A4741;
 }
 
+.card-content h6{
+    font-size: 1.01rem;
+    color: #3A4741; 
+    padding-top: 10px;
+    
+} 
+
 /* Responsive Styles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+
     .card {
-        width: 55%;
+        width: 90%;
+        
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 70%;
+        width: 60%;
     }
-}
+}  */
+
+
 /* .display{
     display: flex;
     position: relative;
