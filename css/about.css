@@ -1,3 +1,9 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 91vh;
+}
 header{
     height: 60px;
     width: 100%;
@@ -144,7 +150,7 @@ header{
 }
 
 .txt h1{
-	color: #ffffff;
+	color: #ffffff; /* blue */
 	font-size: 50px;
 	margin-bottom: 20px;
 }
@@ -162,6 +168,7 @@ header{
     animation-name: zoomin;
     animation-duration: 40s;
 }
+
 @-webkit-keyframes zoomin {
   from {transform: scale(1, 1);}
   to {transform: scale(1.5, 1.5);}
@@ -227,20 +234,3 @@ header{
 		font-size: 12px;
 	}
 }
-/* /6 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,8 +22,10 @@ ul{
 }
 
 .footer{
+	margin-top: auto;
 	background-color: #1a1a1a;
     color: #ffffff;
+    padding: 70px 0;
 	background: inherit;
     background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
     background-size: cover;
@@ -66,11 +68,9 @@ ul{
 	text-transform: capitalize;
 	margin-top: 30px;
 	margin-bottom: 20px;
-
-	margin-top: 40px;
 	color: #ffffff;
 	text-transform: capitalize;
-	margin-left: 30px;
+	margin-left: 0px;
 	font-weight: 500;
 	position: relative;
 }
