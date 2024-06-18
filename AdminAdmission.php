@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    require_once'connect.php';
+    session_start();
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,11 +12,13 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/AdminAdmission.css">
         <link rel="stylesheet" href="css/Admintemp.css">
+        
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"/>
         
     </head>
     <body>
+    <div class="wrapper">
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
@@ -26,14 +32,14 @@
             </div>
             <ul>
                 <li>
-                    <a href="AdminDashboard.html">
+                    <a href="AdminDashboard.php">
                         <i class='bx bxs-home'></i>
                         <span class="nav-item">Home</span>
                     </a>
                     <span class="tooltip">Home</span>
                 </li>
                 <li>
-                    <a href="AdminAdmission.html">
+                    <a href="AdminAdmission.php">
                         <i class='bx bxs-file-blank'></i>
                         <span class="nav-item">Admission</span>
                     </a>
@@ -67,228 +73,82 @@
                 <div class="container">
                     <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Admissions</p>
                     <div class="white-container">
-
-                    <table id="example" class="display" style="width:100%">
+                    <div class="table-container">
+                    <table id="example" class="display">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Email</th>
+                                <th>Phone #</th>
+                                <th>Course</th>
+                                <th>Status</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            $sql = "
+                                SELECT p.student_id, p.firstname, p.mi, p.lastname, p.email, p.cellphone_number, a.status, a.first_choice_course 
+                                FROM 
+                                    personalinformation p
+                                LEFT JOIN 
+                                    admissioninformation a 
+                                ON 
+                                    p.student_id = a.student_id
+                            ";
+                            $personinfo = $con->query($sql) or die ($con->error);
+                            while($row = $personinfo->fetch_assoc()){;
+                        ?>
+
                             <tr>
-                                <td>Jane Doe</td>
-                                <td>Software Engineer</td>
-                                <td>San Francisco</td>
-                                <td>29</td>
-                                <td>2015-03-15</td>
-                                <td>$120,000</td>
+                                <td><?php echo $row['student_id'];?></td>
+                                <td><?php $fullname =  $row['firstname'] . " " . $row['mi'] . " " . $row['lastname'];
+                                    echo $fullname;?></td>  
+                                <td><?php echo $row['email'];?></td> 
+                                <td><?php echo $row['cellphone_number'];?></td>
+                                <td><?php echo $row['first_choice_course'];?></td>
+                                <td><?php echo $row['status'];?></td>
+                                <!-- modal buttons -->
+                                <td>
+                                    <button type="button" class="btnview"><i class='bx bx-file-find'></i></button>
+                                </td> 
                             </tr>
-                            <tr>
-                                <td>John Smith</td>
-                                <td>Project Manager</td>
-                                <td>New York</td>
-                                <td>34</td>
-                                <td>2012-07-23</td>
-                                <td>$110,000</td>
-                            </tr>
-                            <tr>
-                                <td>Alice Johnson</td>
-                                <td>UX Designer</td>
-                                <td>Chicago</td>
-                                <td>41</td>
-                                <td>2018-10-30</td>
-                                <td>$95,000</td>
-                            </tr>
-                            <tr>
-                                <td>Robert Brown</td>
-                                <td>Data Scientist</td>
-                                <td>Boston</td>
-                                <td>27</td>
-                                <td>2019-06-12</td>
-                                <td>$135,000</td>
-                            </tr>
-                            <tr>
-                                <td>Emily Davis</td>
-                                <td>Product Manager</td>
-                                <td>Seattle</td>
-                                <td>32</td>
-                                <td>2017-11-08</td>
-                                <td>$105,000</td>
-                            </tr>
-                            <tr>
-                                <td>Michael Wilson</td>
-                                <td>DevOps Engineer</td>
-                                <td>Austin</td>
-                                <td>35</td>
-                                <td>2016-04-20</td>
-                                <td>$115,000</td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Lee</td>
-                                <td>Marketing Specialist</td>
-                                <td>Denver</td>
-                                <td>30</td>
-                                <td>2013-09-05</td>
-                                <td>$90,000</td>
-                            </tr>
-                            <tr>
-                                <td>David Martinez</td>
-                                <td>Sales Manager</td>
-                                <td>Los Angeles</td>
-                                <td>45</td>
-                                <td>2010-02-14</td>
-                                <td>$125,000</td>
-                            </tr>
-                            <tr>
-                                <td>Anna Taylor</td>
-                                <td>HR Specialist</td>
-                                <td>Miami</td>
-                                <td>28</td>
-                                <td>2020-01-21</td>
-                                <td>$85,000</td>
-                            </tr>
-                            <tr>
-                                <td>James Anderson</td>
-                                <td>CTO</td>
-                                <td>Atlanta</td>
-                                <td>48</td>
-                                <td>2009-05-17</td>
-                                <td>$200,000</td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Lee</td>
-                                <td>Marketing Specialist</td>
-                                <td>Denver</td>
-                                <td>30</td>
-                                <td>2013-09-05</td>
-                                <td>$90,000</td>
-                            </tr>
-                            <tr>
-                                <td>David Martinez</td>
-                                <td>Sales Manager</td>
-                                <td>Los Angeles</td>
-                                <td>45</td>
-                                <td>2010-02-14</td>
-                                <td>$125,000</td>
-                            </tr>
-                            <tr>
-                                <td>Anna Taylor</td>
-                                <td>HR Specialist</td>
-                                <td>Miami</td>
-                                <td>28</td>
-                                <td>2020-01-21</td>
-                                <td>$85,000</td>
-                            </tr>
-                            <tr>
-                                <td>James Anderson</td>
-                                <td>CTO</td>
-                                <td>Atlanta</td>
-                                <td>48</td>
-                                <td>2009-05-17</td>
-                                <td>$200,000</td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Lee</td>
-                                <td>Marketing Specialist</td>
-                                <td>Denver</td>
-                                <td>30</td>
-                                <td>2013-09-05</td>
-                                <td>$90,000</td>
-                            </tr>
-                            <tr>
-                                <td>David Martinez</td>
-                                <td>Sales Manager</td>
-                                <td>Los Angeles</td>
-                                <td>45</td>
-                                <td>2010-02-14</td>
-                                <td>$125,000</td>
-                            </tr>
-                            <tr>
-                                <td>Anna Taylor</td>
-                                <td>HR Specialist</td>
-                                <td>Miami</td>
-                                <td>28</td>
-                                <td>2020-01-21</td>
-                                <td>$85,000</td>
-                            </tr>
-                            <tr>
-                                <td>James Anderson</td>
-                                <td>CTO</td>
-                                <td>Atlanta</td>
-                                <td>48</td>
-                                <td>2009-05-17</td>
-                                <td>$200,000</td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Lee</td>
-                                <td>Marketing Specialist</td>
-                                <td>Denver</td>
-                                <td>30</td>
-                                <td>2013-09-05</td>
-                                <td>$90,000</td>
-                            </tr>
-                            <tr>
-                                <td>David Martinez</td>
-                                <td>Sales Manager</td>
-                                <td>Los Angeles</td>
-                                <td>45</td>
-                                <td>2010-02-14</td>
-                                <td>$125,000</td>
-                            </tr>
-                            <tr>
-                                <td>Anna Taylor</td>
-                                <td>HR Specialist</td>
-                                <td>Miami</td>
-                                <td>28</td>
-                                <td>2020-01-21</td>
-                                <td>$85,000</td>
-                            </tr>
-                            <tr>
-                                <td>James Anderson</td>
-                                <td>CTO</td>
-                                <td>Atlanta</td>
-                                <td>48</td>
-                                <td>2009-05-17</td>
-                                <td>$200,000</td>
-                            </tr>
+                        <?php }?>
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Email</th>
+                                <th>Phone #</th>
+                                <th>Course</th>
+                                <th>Status</th>
+                                <th>View</th>
                             </tr>
                         </tfoot>
                     </table>
-
-                    
-                        <!-- jQuery -->
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                        <!-- Bootstrap JS -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-                        <!-- DataTables JS -->
-                        <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-                        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-                    
-                        <script>
-                            new DataTable('#example', {
-                            paging: false,
-                            scrollCollapse: true,
-                            scrollY: '57vh'
-                    });
-                        </script>
-                    </div>
-                    
                 </div>
+                </div>
+                    
+                <!-- jQuery -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <!-- Bootstrap JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+                <!-- DataTables JS -->
+                <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+                    
+                <script>
+                    new DataTable('#example', {
+                        paging: false,
+                        scrollCollapse: true,
+                        scrollY: '57vh'
+                    });
+                </script>
+            </div>
         </div>
+    </div>
     </body>
 
     <script>
