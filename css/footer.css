@@ -24,7 +24,6 @@ ul{
 .footer{
 	background-color: #1a1a1a;
     color: #ffffff;
-    padding: 70px 0;
 	background: inherit;
     background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
     background-size: cover;
@@ -52,7 +51,6 @@ ul{
     background-size: cover;
     background-position: center;
     width: 100%;
-    margin-top: 30px;
     height: auto; 
 	box-sizing: border-box; 
 	z-index: 1; 

@@ -50,18 +50,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-body {
-    background-image: url('../images/schoolbg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Ensure the background stays in place */
-    background-position: center;
-    min-height: 100vh; /* Ensure body covers the full viewport height */
-    display: flex;
-    flex-direction: column; /* Ensure the footer stays at the bottom */
-}
-
 /*start of header*/
 .nav-header {
     position: fixed;
