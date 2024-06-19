@@ -88,50 +88,90 @@
 </div>
 
 <!-- =====ANNOUNCEMENT BULLETIN PAGE==== -->
-<div class="announce">
-    <div id="announcementCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card__article" style="background-image: url('/images/Annc1.jpg');">
-                    <div class="card__data">
-                        <span class="card__description"></span>
-                        <h2 class="card__title">Enrollment Schedule for Second Semester 2023-2024</h2>
-                    </div>
-                </div>
+
+<div class="carousel-container">
+    <div class="shadow"></div>
+    <h3>ANNOUNCEMENT BULLETIN</h3>
+    <div class="line"></div>
+
+    <div class="card-group">
+        
+        <div class="card">
+            <img src="/images/Annc1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Announcement</h5>
+                <p class="card-text">Enrollment Schedule for Second Semester 2023-2024</p>
             </div>
-            <div class="carousel-item">
-                <div class="card__article" style="background-image: url('/images/Annc2.jpg');">
-                    <div class="card__data">
-                        <span class="card__description"></span>
-                        <h2 class="card__title">Hiring: Admin Aide III (Job Order)</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card__article" style="background-image: url('/images/Annc3.jpg');">
-                    <div class="card__data">
-                        <span class="card__description"></span>
-                        <h2 class="card__title">Hiring Librarian (Job Order)</h2>
-                    </div>
-                </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#announcementCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#announcementCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="card">
+            <img src="/images/Annc2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Announcement</h5>
+                <p class="card-text">
+                    Hiring: Admin Aide III (Job Order)
+                    </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/Annc3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Announcement</h5>
+                <p class="card-text">Hiring Librarian (Job Order)</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <span class="circle active" data-slide="0"></span>
+        <span class="circle" data-slide="1"></span>
+        <span class="circle" data-slide="2"></span>
     </div>
 </div>
 
 
 
- 
-    <br>
-    <!--Header/Nav end-->
+<!-- ======== ADMISSION PROCEDURE ======== -->
+<div class="container">
+    <div class="content">
+      <div class="left">
+        <h2>Admission Procedures</h2>
+        <p>Check the requirements and procedures for admission <br>
+            𝐀𝐏𝐏𝐋𝐈𝐂𝐀𝐓𝐈𝐎𝐍 𝐅𝐎𝐑 𝐀𝐃𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐟𝐨𝐫 𝐅𝐈𝐑𝐒𝐓 𝐒𝐄𝐌𝐄𝐒𝐓𝐄𝐑 <br> 
+            𝐒.𝐘. 𝟐𝟎𝟐𝟒-𝟐𝟎𝟐𝟓 𝐛𝐞𝐠𝐢𝐧𝐬 𝐨𝐧 𝐍𝐎𝐕𝐄𝐌𝐁𝐄𝐑 𝟔, 𝟐𝟎𝟐𝟑! <br>
+            𝗢𝗡𝗟𝗜𝗡𝗘 𝗔𝗣𝗣𝗟𝗜𝗖𝗔𝗧𝗜𝗢𝗡 𝗟𝗜𝗡𝗞𝗦: <br>
+            Start of Application: November 6, 2023</p>
+        <button>Apply Now</button>
+        
+      </div>
+      <div class="right">
+        <img src="/images/aylab.png" alt="Image">
+      </div>
+    </div>
+</div>
+
+<!-- ====== NEWS AND UPDATES -->
+<div class="news-container">
+    <div class="slide-container">
+        <div class="card-wrapper">
+            <div class="news">
+                <div class="image-box">
+                    <img src="/images/NU2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar  -->
     <script>
         const toggleBtn = document.querySelector('.toggle_btn')
         const toggleBtnIcon = document.querySelector('.toggle_btn i')
@@ -146,6 +186,45 @@
         : 'fa-solid fa-bars'
     }
     </script>
+
+    <!-- Announcement -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".carousel .slide");
+    const circles = document.querySelectorAll(".buttons .circle");
+
+    let currentSlide = 0;
+
+    // Function to show slide
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+        circles.forEach((circle) => {
+            circle.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+        circles[index].classList.add("active");
+    }
+
+    // Initial slide display
+    showSlide(currentSlide);
+
+    // Event listeners for buttons
+    circles.forEach((circle, index) => {
+        circle.addEventListener("click", () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+
+});\
+    </script>
+
+
+    
+    
 <script src="/css/main.js"></script>
 
 

@@ -69,7 +69,7 @@
     background-position: center;
     animation: animate1 30s ease-in-out infinite;
     position: relative;
-
+    
 }
 
 @keyframes animate1 {
@@ -342,6 +342,149 @@ li{
 }
 
 /* ====Announcement Part====== */
-.announce{
-    background-image: url(/images/AnnounceBg.png);
+
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg,
+                            hsla(0,0%,0%,0)58%,
+                            hsl(0,0%,0%)75%);
 }
+
+.card-group{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* align-items: flex-start; */
+} 
+ .carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: url(/images/AnnounceBg.png) no-repeat center center;
+    background-size: cover;
+    
+} 
+
+.carousel-container h3{
+    color: white;
+    font-family: monospace;
+    font-weight: 700;
+    padding-top: 30px;
+    margin-left: 100px;
+}
+
+.line{
+    width: 100px;
+    height: 4px;
+    background: white;
+    margin-left: 100px;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 80px;
+    
+}
+
+.card {
+    width: 300px; /* Adjust as needed */
+    margin: 10px;
+}
+
+
+
+/* ======== ADMISSION PROCEDURE ====== */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .right {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  button {
+    display: block;
+    width: 30%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  
+    .left, .right {
+      flex: auto;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+/* ====== NEWS AND UPDATES */
+.news-container{
+    max-width: 100%;
+    background: url(/images/NUbg.jpg) no-repeat center center;
+    background-size: cover;
+}
+.news .image-box{
+    height: 200px;
+}
+
+.news .image-box img{
+    height: 100%;
+}
+
+
+

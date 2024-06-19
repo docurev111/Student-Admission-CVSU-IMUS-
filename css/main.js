@@ -19,6 +19,16 @@ document.getElementById('nav-close').addEventListener('click', function() {
 
 
 
+window.addEventListener('resize', () => {
+    const carousel = document.querySelector('.carousel');
+    if (window.innerWidth >= 1200) {
+        carousel.style.transform = 'none';
+    } else {
+        changeSlide(currentSlide);
+    }
+});
+
+
 
 // let slideIndex = 0;
 // showSlides();
