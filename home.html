@@ -14,7 +14,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"></script>
 
-    <!-- Icon -->
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"/>
 
@@ -63,22 +63,22 @@
 <!-- ======FIRST PAGE -->
 <div class="bgc">
     <div class="card-container">
-        <div class="card">
+        <div class="cards">
             <i class="fas fa-graduation-cap"></i>
             <h5>Student</h5>
             <p>5746</p>
         </div>
-        <div class="card">
+        <div class="cards">
             <i class="fas fa-book"></i>
             <h5>Academic</h5>
             <p>982</p>
         </div>
-        <div class="card">
+        <div class="cards">
             <i class="fas fa-chalkboard-teacher"></i>
             <h5>Non-Academic</h5>
             <p>544</p>
         </div>
-        <div class="card">
+        <div class="cards">
             <i class="fas fa-laptop"></i>
             <h5>Faculty</h5>
             <p>1142</p>
@@ -96,7 +96,7 @@
 
     <div class="card-group">
         
-        <div class="card">
+        <div class="announce">
             <img src="/images/Annc1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -106,7 +106,7 @@
                 <small class="text-body-secondary">Last updated 3 mins ago</small>
             </div>
         </div>
-        <div class="card">
+        <div class="announce">
             <img src="/images/Annc2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -118,7 +118,7 @@
                 <small class="text-body-secondary">Last updated 3 mins ago</small>
             </div>
         </div>
-        <div class="card">
+        <div class="announce">
             <img src="/images/Annc3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -158,18 +158,53 @@
     </div>
 </div>
 
-<!-- ====== NEWS AND UPDATES -->
+
+<!-- ======== NEWS AND UPDATE ========= -->
 <div class="news-container">
-    <div class="slide-container">
-        <div class="card-wrapper">
-            <div class="news">
-                <div class="image-box">
-                    <img src="/images/NU2.jpg" alt="">
-                </div>
+  <h3>NEWS AND UPDATE</h3>
+    <div class="line"></div>
+  <div class="newss">
+      <div class="news">
+          <div class="news-inner">
+              <div class="news-item">
+                  <img src="/images/NU1.png" alt="Slide 1">
+              </div>
+              <div class="news-item">
+                  <img src="/images/NU2.jpg" alt="Slide 2">
+              </div>
+              <div class="news-item">
+                  <img src="/images/NU2.jpg" alt="Slide 3">
+              </div>
+              <div class="news-item">
+                  <img src="/images/NU2.jpg" alt="Slide 4">
+              </div>
+              <div class="news-item">
+                  <img src="/images/NU2.jpg" alt="Slide 5">
+              </div>
+              <div class="news-item">
+                <img src="/images/NU2.jpg" alt="Slide 6">
             </div>
-        </div>
-    </div>
-</div>
+            
+          </div>
+      </div>
+  </div>
+  
+  <div class="news-controls">
+      <!-- <button class="control prev" onclick="prevSlide()">&#10094;</button>
+      <button class="control next" onclick="nextSlide()">&#10095;</button> -->
+  </div>
+  <div class="news-indicators">
+      <span class="indicator" onclick="goToSlide(0)"></span>
+      <span class="indicator" onclick="goToSlide(1)"></span>
+      <span class="indicator" onclick="goToSlide(2)"></span>
+      <span class="indicator hide-on-large" onclick="goToSlide(3)"></span>
+      <span class="indicator hide-on-large" onclick="goToSlide(4)"></span>
+      <span class="indicator hide-on-large" onclick="goToSlide(5)"></span>
+
+  </div>
+
+    
+
 
 <!-- Navbar  -->
     <script>
@@ -221,6 +256,65 @@
 
 });\
     </script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <!-- News and Update -->
+    <script>
+      let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.news-item');
+    const itemsPerView = getItemsPerView();
+    const totalSlides = Math.ceil(slides.length / itemsPerView); // Adjust for items per view
+    if (index >= totalSlides) currentIndex = 0;
+    if (index < 0) currentIndex = totalSlides - 1;
+
+    const newTransform = -currentIndex * (100 / 1) + '%';
+    document.querySelector('.news-inner').style.transform = `translateX(${newTransform})`;
+
+    updateIndicators();
+}
+
+function nextSlide() {
+    currentIndex++;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex--;
+    showSlide(currentIndex);
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+}
+
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+    });
+}
+
+function getItemsPerView() {
+    if (window.innerWidth <= 480) {
+        return 1; // Show 1 item on small screens
+    } else if (window.innerWidth <= 768) {
+        return 2; // Show 2 items on medium screens
+    } else {
+        return 3; // Show 3 items on large screens
+    }
+}
+
+// Initialize the carousel
+window.addEventListener('resize', () => showSlide(currentIndex));
+showSlide(currentIndex);
+  </script>
 
 
     

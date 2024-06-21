@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import "../node_modules/bootstrap/scss/functions";
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
 
 :root{
     --header-height: 3.5rem;
@@ -100,45 +110,56 @@
     border-radius: 10px;
 }
 
-.card {
+.cards {
     flex: 1 1 calc(25% - 40px);
-    
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 300px;
-    backdrop-filter: blur(10px);
+    background-color:rgba(58, 71, 65, 0.6); 
+    backdrop-filter: blur(15px);
+    height: 130px;
 }
 
-.card i {
+.cards i {
     font-size: 2rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.card h5 {
+.cards h5 {
     font-size: 1.25rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.card p {
+.cards p {
     font-size: 1rem;
-    color: #666;
+    color: #ffffff;
 }
 
 @media (max-width: 992px) {
-    .card {
+    .cards {
         flex: 1 1 calc(50% - 40px);
     }
 }
 
 @media (max-width: 768px) {
-    .card {
+    .cards {
         flex: 1 1 calc(100% - 40px);
+        
     }
 }
+
+
+@media (max-width: 375px) {
+    .cards {
+        flex: 1 1 calc(100% - 40px);
+        height: 130px;
+    }
+}
+
 
 /*start of header*/
 header {
@@ -342,18 +363,6 @@ li{
 }
 
 /* ====Announcement Part====== */
-
-.shadow{
-    position: absolute;
-    width: 100%;
-    height: 800px;
-    top: 0;
-    left: 0;
-    background: linear-gradient(180deg,
-                            hsla(0,0%,0%,0)58%,
-                            hsl(0,0%,0%)75%);
-}
-
 .card-group{
     display: flex;
     align-content: center;
@@ -392,9 +401,15 @@ li{
     
 }
 
-.card {
+.announce {
     width: 300px; /* Adjust as needed */
     margin: 10px;
+    background-color:rgba(58, 71, 65, 0.6); 
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 
@@ -403,6 +418,7 @@ li{
 .container {
     max-width: 1200px;
     margin: 20px auto;
+    margin-top: 50px;
     padding: 20px;
     height: 500px;
     display: flex;
@@ -442,14 +458,16 @@ li{
     padding: 10px 20px;
     margin-bottom: 10px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color:rgba(58, 71, 65, 0.6); 
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
     color: #fff;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: rgba(108, 133, 121, 0.858);
   }
   
   img {
@@ -463,6 +481,8 @@ li{
   @media (max-width: 768px) {
     .content {
       flex-direction: column;
+      margin-top: 150px;
+      padding-bottom: 100px;
     }
   
     .left, .right {
@@ -473,18 +493,141 @@ li{
   }
 
 /* ====== NEWS AND UPDATES */
-.news-container{
-    max-width: 100%;
-    background: url(/images/NUbg.jpg) no-repeat center center;
+.news-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 20px;
+    background-image: url(/images/NUbg.png) ;
     background-size: cover;
-}
-.news .image-box{
-    height: 200px;
+    background-position: center;  
 }
 
-.news .image-box img{
-    height: 100%;
+.news-container h3{
+    color: white;
+    font-family: monospace;
+    font-weight: 700;
+    padding-top: 50px;
+    margin-left: 100px;
 }
 
+.line{
+    width: 100px;
+    height: 4px;
+    background: white;
+    margin-left: 100px;
+}
 
+.newss {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    margin: 35px;
+}
 
+.news {
+    overflow: hidden;
+    width: 100%;
+}
+
+.news-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.news-item {
+    min-width: 33.33%; /* Show 3 items at a time */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.news-item img {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    display: block;
+}
+
+.news-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.news-indicators {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.indicator {
+    height: 10px;
+    width: 10px;
+    background-color: #042708;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #d5f7b4;
+}
+
+/* Hide specific indicators on large screens */
+@media (min-width: 769px) {
+    .indicator.hide-on-large {
+        display: none;
+    }
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-container{
+        margin-top: 100px;
+    }
+    .news-item {
+        min-width: 50%; /* Show 2 items at a time */
+    }
+
+    .indicator.hide-on-large {
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .news-item {
+        min-width: 100%; /* Show 1 item at a time */
+    }
+    .indicator.hide-on-large {
+        display:block;
+    }
+    .newss{
+        height: 100%;
+    }
+    /* .news-indicators{
+        bottom: 80px;
+    } */
+}
+
+/* Kabu Hereos */
