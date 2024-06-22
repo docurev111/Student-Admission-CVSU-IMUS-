@@ -64,22 +64,22 @@
 <!-- ======FIRST PAGE -->
 <div class="bgc ">
     <div class="card-container">
-        <div class="cards scroll-animation">
+        <div class="cards">
             <i class="fas fa-graduation-cap"></i>
             <h5>Student</h5>
             <p>5746</p>
         </div>
-        <div class="cards scroll-animation">
+        <div class="cards">
             <i class="fas fa-book"></i>
             <h5>Academic</h5>
             <p>982</p>
         </div>
-        <div class="cards scroll-animation">
+        <div class="cards">
             <i class="fas fa-chalkboard-teacher"></i>
             <h5>Non-Academic</h5>
             <p>544</p>
         </div>
-        <div class="cards scroll-animation">
+        <div class="cards">
             <i class="fas fa-laptop"></i>
             <h5>Faculty</h5>
             <p>1142</p>
@@ -89,15 +89,14 @@
 </div>
 
 <!-- =====ANNOUNCEMENT BULLETIN PAGE==== -->
-
 <div class="carousel-container">
     <div class="shadow"></div>
-    <h3>ANNOUNCEMENT BULLETIN</h3>
+    <h3 class="hhh">ANNOUNCEMENT BULLETIN</h3>
     <div class="line"></div>
 
     <div class="card-group">
         
-        <div class="announce scroll-animation">
+        <div class="announce">
             <img src="/images/Annc1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -107,7 +106,7 @@
                 <small class="text-body-secondary">Last updated 3 mins ago</small>
             </div>
         </div>
-        <div class="announce scroll-animation">
+        <div class="announce">
             <img src="/images/Annc2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -119,7 +118,7 @@
                 <small class="text-body-secondary">Last updated 3 mins ago</small>
             </div>
         </div>
-        <div class="announce scroll-animation">
+        <div class="announce">
             <img src="/images/Annc3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Announcement</h5>
@@ -137,8 +136,6 @@
         <span class="circle" data-slide="2"></span>
     </div>
 </div>
-
-
 
 <!-- ======== ADMISSION PROCEDURE ======== -->
 <div class="container">
@@ -385,6 +382,10 @@
             </div>
 </footer>
 
+<a href="" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-double-line"></i>
+</a>
+
     
 
 
@@ -600,6 +601,41 @@ showSlide(currentIndex);
         });
     });
 </script>
+
+
+<script src="/css/scrollreveal.min.js"></script>
+
+<script>
+    const scrollUp = () =>{
+        const scrollUp = document.getElementById('scroll-up')
+        // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+        this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                            : scrollUp.classList.remove('show-scroll')
+    }
+    window.addEventListener('scroll', scrollUp)
+</script>
+
+<script>
+    // Scroll Reveal Animation
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 3000,
+        delay: 400,
+    })
+    
+    sr.reveal('.cards', {delay:400, distance:'100px', interval:100})
+    sr.reveal('.card-group', {delay:300, distance:'100px', interval: 100})
+    sr.reveal('.left', {origin:'left'})
+    sr.reveal('.right', {origin:'right'})
+    sr.reveal('.news-inner', {delay:300, distance:'100px', interval:100})
+    sr.reveal('.main-text , .sub-text , .footer-text , .button')
+    sr.reveal('.sports-inner', {delay:300, distance:'100px', interval:100})
+    sr.reveal('.image-grid', {delay:400, distance:'100px', interval:200, origin: 'left'})
+    sr.reveal('.discover-container', {delay:400, distance:'100px', interval:200, origin: 'right'})
+    sr.reveal('.container', {delay:400, distance:'100px', interval:200, origin: 'bottom'})
+</script>
+
 
     
     

@@ -1113,6 +1113,47 @@ li{
     }
 }
 
+::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(114, 13%, 15%);
+}
+
+::-webkit-scrollbar-thumb{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsla(133, 31%, 58%, 0.608);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-radius: .5rem;
+    background-color: hsla(133, 60%, 76%, 0.608);
+}
+
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: hsla(97, 41%, 32%, 0.521);
+    border-radius: 20px;
+    padding: 6px;
+    display: inline-flex;
+    color: var(--title-color);
+    font-size: 1.25rem;
+    backdrop-filter: blur(24px);
+    text-decoration: none;
+    z-index: var(--z-tooltip);
+    transition: bottom .4s, transform .4s;
+    scroll-behavior: smooth;
+}
+
+.scrollup:hover{
+    transform: translateY(-.25rem);
+}
+
+.show-scroll{
+    bottom: 3rem;
+}
 
 
 

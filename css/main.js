@@ -30,6 +30,7 @@ window.addEventListener('resize', () => {
 
 
 
+
 // let slideIndex = 0;
 // showSlides();
 
