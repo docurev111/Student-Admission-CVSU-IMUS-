@@ -1,140 +1,145 @@
-*  {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-image: url(/images/1bg2.jpg);
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    line-height: 1.6;
     margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
+
 
 .container {
-    display: flex;
-    background-color: hsla(125, 6, 63, 0.6);
-    backdrop-filter: blur(24px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 1200px;
-    width: 100%;
-
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 70px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-container {
-    padding: 80px;
-    flex: 2;
-}
-
-.contact-info {
-    background-color: hsla(126, 12%, 54%, 0.6);
-    color: #fff;
-    padding: 80px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-info h3 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.contact-info p {
-    margin: 10px 0;
+h1 {
+    font-size: 2.5em;
     text-align: center;
-    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.social-media i {
-    font-size: 1.5rem;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.map-container {
-    margin-top: 20px;
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #666;
 }
 
 h2 {
-    color: #333;
+    font-size: 2em;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #4a4a4a;
     margin-bottom: 20px;
-    font-size: 24px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+h4 {
+    font-size: 1.3em;
+    color: #4a4a4a;
+    margin-bottom: 10px;
 }
 
-.form-group label {
+.program-title {
+    font-size: 1.2em;
     color: #333;
-    margin-bottom: 5px;
-    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+.program-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #aaa;
+.program-list li {
+    margin-bottom: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #25361c;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    align-self: flex-start;
-}
-
-button:hover {
-    background-color: #d62839;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
+        margin: 30px 10px;
+        padding: 30px;
     }
 
-    .contact-info {
-        flex: none;
-        width: 100%;
+    h1 {
+        font-size: 2em;
     }
 
-    .form-container {
-        width: 100%;
+    .intro {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .program-title {
+        font-size: 1.1em;
+    }
+
+    .program-list li {
+        font-size: 0.95em;
     }
 }
 
+@media (max-width: 480px) {
+    .container {
+        margin: 20px 5px;
+        padding: 60px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .intro {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .program-title {
+        font-size: 1em;
+    }
+
+    .program-list li {
+        font-size: 0.85em;
+    }
+}
 
 /*start of header*/
 header {
@@ -156,6 +161,7 @@ header.scrolled {
     backdrop-filter: blur(15px);
     transition: background-color 1s ease-in-out;
     height: 65px;
+    
 }
 
 .logo img {
@@ -198,6 +204,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .navbar .logo a{
@@ -336,4 +343,3 @@ li{
         width: unset;
     }
 }
-
