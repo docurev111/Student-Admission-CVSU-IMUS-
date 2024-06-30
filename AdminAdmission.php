@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/AdminAdmission.css">
         <link rel="stylesheet" href="css/Admintemp.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+        
         
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"/>
@@ -180,4 +180,23 @@
                     $('#edit_query').load('load_edit1.php?student_id=' + $student_id);
                 });
     </script>
+    <script>
+    // Function to open modal
+    function openModal() {
+        document.getElementById("editStudentModal").style.display = "block";
+    }
+
+    // Function to close modal
+    function closeModal() {
+        document.getElementById("editStudentModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById("editStudentModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </html>
