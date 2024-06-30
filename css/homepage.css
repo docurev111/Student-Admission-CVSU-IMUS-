@@ -188,8 +188,8 @@ header.scrolled {
 }
 
 .logo img {
-    width: 100x; 
-    height: 49px; 
+    width: 125px; 
+    height: auto; 
     margin-bottom: 5px;
     user-select: none;
 }
@@ -834,7 +834,7 @@ li{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     background-color: white;
     padding: 20px;
-    background-image: url(/images/NUbg.png);
+    background-image: url(/images/sportsbg.png);
     background-size: cover;
     background-position: center;
 }

@@ -73,7 +73,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 999;
     transition: all 0.5s;
 }
 
@@ -85,8 +85,14 @@ body {
 }
 
 .logo img {
-    width: 100x; 
-    height: 49px; 
+    height: auto;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+img.nav_logo {
+    width: 125px;
+    height: auto;
     margin-bottom: 5px;
     user-select: none;
 }
@@ -103,7 +109,8 @@ li{
 
 }
 
-.links a:hover{
+
+.navbar .links a:hover {
     color: #D5E4CF;
     transform-origin: left;
     transform: scaleX(1);
@@ -118,6 +125,21 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+/* Ensure no unwanted Bootstrap styles affect the navbar */
+.navbar .nav-link {
+    padding: 0;
+    color: #3A4741;
 }
 
 .navbar .logo a{
@@ -240,6 +262,10 @@ h4 {
 
     .dropdown_menu{
         display: block;
+    }
+
+    .card{
+        max-width: 90%;
     }
 }
 
