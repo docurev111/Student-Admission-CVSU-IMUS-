@@ -10,8 +10,8 @@
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Admin Dashboard</title>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="css/AdminAdmission.css">
-        <link rel="stylesheet" href="css/Admintemp.css">
+        <link rel="stylesheet" href="../css/AdminAdmission.css">
+        <link rel="stylesheet" href="../css/Admintemp.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         
@@ -68,7 +68,7 @@
         <div class="main-content">
             <div class="tophead">
                 <div class="toplogo">
-                    <img src="images/cvsulogo.png" style="width: 50px; height: 50px;">
+                    <img src="../images/cvsulogo.png" style="width: 50px; height: 50px;">
                     <H2 style="color: white;">CvSU Imus</H2>
                 </div>
             </div>
