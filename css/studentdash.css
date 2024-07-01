@@ -54,8 +54,8 @@ i{
     background-color: rgb(90, 131, 108);
     color: rgb(255, 255, 255);
     overflow-y: auto;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     z-index: 100;
     
 }
@@ -210,6 +210,10 @@ main-content {
 
     #sidebar{
         display: none;
+    }
+
+    .sidebar-responsive.sidebar-active {
+        left: 0;
     }
 
     .menu-icon{
