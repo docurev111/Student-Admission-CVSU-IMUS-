@@ -15,44 +15,52 @@
     crossorigin="anonymous"
     />
 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous">
     </script>
 
 	<link rel="stylesheet" href="css/reg.css"/>
+
 	<title>Registration Portal - CVSU Imus</title>
 </head>
 <body>
-<header>
-	<div class = "navbar">
-		<div class = "logo">
-				<a href="#">
-					<img src="images/schoolname.png" alt="Cavite State University Logo" style="width: 100x; height: 49px;">
-			</a>
-		</div>
-		<ul class = "links">
-		<li><a href="hero">Home</a></li>
-		<li><a href="about">About CVSU</a></li>
-		<li><a href="admissions">Admissions</a></li>
-		<li><a href="academics">Academics</a></li>
-		<li><a href="contacts">Contacts</a></li>
-		</ul>
-	<a href = "#" class = "action_btn">Get Started</a>
-	<div class = "toggle_btn">
-		<i class="fa-solid fa-bars"></i>
-	</div>
-	</div>
-
-	<div class = "dropdown_menu">
-		<li><a href="hero">Home</a></li>
-		<li><a href="about">About CVSU</a></li>
-		<li><a href="admissions">Admissions</a></li>
-		<li><a href="academics">Academics</a></li>
-		<li><a href="contacts">Contacts</a></li>
-		<li><a href = "#" class = "action_btn">Get Started</a></li>
-	</div>
-</header>
+    <div class="headerContainer ">
+        <header>
+            
+            <div class="navbar">
+                <div class="logo">
+                    <img class = "nav_logo"
+                    img src="images/schoolnewlogo.png" >CVSU
+                </div>
+                <ul class="links">
+                    <li><a href="/home.html">HOME</a></li>
+                    <li><a href="/About.html">ABOUT CVSU</a></li>
+                    <li><a href="/Admissions.html">ADMISSION</a></li>
+                    <li><a href="/course.html">ACADEMICS</a></li>
+                    <li><a href="/contact.html">CONTACTS</a></li>
+                </ul>
+                <a href="/Login.html" class="action_button">Get Started</a>
+                    <!-- <button class="btnLogin-popup"><a href="#">Login</a></button> -->
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+                
+    </div> 
+            
+    <div class="dropdown_menu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT CVSU</a></li>
+        <li><a href="#">ADMISSION</a></li>
+        <li><a href="#">ACADEMICS</a></li>
+        <li><a href="#">CONTACTS</a></li>
+        <li><a href="" class="action_button">Get Started</a></li>
+    </div>
+        </header>
 
 <main>
     <section id="hero">
@@ -329,28 +337,39 @@
 </main>
 
 <script>
-const toggleBtn = document.querySelector('.toggle_btn')
-const toggleBtnIcon = document.querySelector('.toggle_btn i')
-const dropDownMenu = document.querySelector('.dropdown_menu')
-
-toggleBtn.onclick = function () {
-	dropDownMenu.classList.toggle('open')
-	const isOpen = dropDownMenu.classlist.contains('open')
-
-	toggleBtnIcon.classlist = isOpen
-		? "fa-solid fa-xmark"
-		: "fa-solid fa-bars"
-
-}
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+    
+    toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open');
+        const isOpen = dropDownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+    
 </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+
     <script>
         $(document).ready(function() {
             bsCustomFileInput.init();
         });
     </script>
+
 
 <!-- file upload -->
 <script>
@@ -366,6 +385,7 @@ toggleBtn.onclick = function () {
         .catch(error => console.error('Error:', error));
     });
 </script>
+
 
 
 </body>
