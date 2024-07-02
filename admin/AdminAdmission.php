@@ -12,6 +12,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="../css/AdminAdmission.css">
         <link rel="stylesheet" href="../css/Admintemp.css">
+        <link rel="stylesheet" href="../css/actionmodal.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         
@@ -75,18 +76,24 @@
                 <div class="container">
                     <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Admissions</p>
                     <div class="white-container">
-                        <!-- Edit student modal -->
-                        <div class = "modal fade" id = "edit_student" tabindex = "-1" role = "dialog" aria-labelledby = "myModallabel">
-                                    <div class = "modal-dialog" role = "document">
-                                        <div class = "modal-content panel-warning">
-                                            <div class = "modal-header panel-heading">
-                                                <h4 class = "modal-title mx-auto" id = "myModallabel">Edit Student</h4>
-                                            </div>
-                                            <div id = "edit_query"></div>
-                                        </div>
-                                    </div>
+                    <!-- Modal for student info -->
+                    
+                    <div class="custom-modal" id="custom-modal" tabindex="-1" role="dialog" aria-labelledby="myModallabel">
+                        <div class="custom-modal-dialog" role="document">
+                            <div class="custom-modal-content">
+                                <div class="custom-modal-header">
+                                    <h4 class="custom-modal-title" id="myModallabel">Student Information</h4>
+                                    <button type="button" class="custom-close-button">Close</button>
                                 </div>
-                        <!-- end -->
+                                <div class="custom-modal-body" id="edit_query"></div>
+                                <div class="custom-modal-footer">
+                                    <button type="submit" class="btn-submit">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end -->
                         <div class="table-container">
                         <table id="example" class="display">
                             <thead>
@@ -103,7 +110,7 @@
                             <tbody>
                             <?php
                                 $sql = "
-                                    SELECT p.student_id, p.firstname, p.mi, p.lastname, p.email, p.cellphone_number, a.status, a.first_choice_course 
+                                    SELECT p.student_id, p.firstname, p.middlename, p.lastname, p.email, p.cellphone_number, a.status, a.preferred_course 
                                     FROM 
                                         personalinformation p
                                     LEFT JOIN 
@@ -117,15 +124,19 @@
 
                                 <tr>
                                     <td><?php echo $row['student_id'];?></td>
-                                    <td><?php $fullname =  $row['firstname'] . " " . $row['mi'] . " " . $row['lastname'];
+                                    <td><?php $fullname =  $row['firstname'] . " " . $row['middlename'] . " " . $row['lastname'];
                                         echo $fullname;?></td>  
                                     <td><?php echo $row['email'];?></td> 
                                     <td><?php echo $row['cellphone_number'];?></td>
-                                    <td><?php echo $row['first_choice_course'];?></td>
+                                    <td><?php echo $row['preferred_course'];?></td>
                                     <td><?php echo $row['status'];?></td>
                                     <!-- modal buttons -->
                                     <td>
-                                        <button type="button" id="edit_button" class="btn btn-success estudent_id" name = "<?php echo $row['student_id'];?>" data-bs-toggle="modal" data-bs-target="#edit_student"><i class='bx bx-file-find'></i></button>
+                                    <!-- Button to trigger the modal -->
+                                    <button type="button" class="btn-open-modal" id="btn-open-modal" name="<?php echo isset($row['student_id']) ? $row['student_id'] : ''; ?>">
+                                        <i class='bx bx-file-find'></i> Edit Student
+                                    </button>
+
                                     </td> 
                                 </tr>
                             <?php }?>
@@ -163,6 +174,61 @@
                 </div>
             </div>
     </div>
+
+   <!-- Script for modal student info -->
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select all elements with the class 'btn-open-modal'
+    var elements = document.querySelectorAll('.btn-open-modal');
+
+    // Attach a click event listener to each element
+    elements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Get the value of the 'name' attribute of the clicked element
+            var STUDENT_ID = this.getAttribute('name');
+
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define the callback function to handle the response
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Insert the response into the element with id 'edit_query'
+                    document.getElementById('edit_query').innerHTML = xhr.responseText;
+                    // Show the modal
+                    document.getElementById('custom-modal').style.display = 'block';
+                }
+            };
+
+            // Open the request
+            xhr.open('GET', 'load_action.php?student_id=' + encodeURIComponent(STUDENT_ID), true);
+
+            // Send the request
+            xhr.send();
+        });
+    });
+
+    // Close modal when the close button is clicked
+    var closeModalBtn = document.querySelector('.custom-close-button');
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            document.getElementById('custom-modal').style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        var modal = document.getElementById('custom-modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+
+</script>
+
     </body>
 
     <script>
@@ -174,29 +240,4 @@
         };
     </script>
 
-    <script type="text/javascript">
-                $('.estudent_id').click(function(){
-                    $student_id = $(this).attr('name');
-                    $('#edit_query').load('load_edit1.php?student_id=' + $student_id);
-                });
-    </script>
-    <script>
-    // Function to open modal
-    function openModal() {
-        document.getElementById("editStudentModal").style.display = "block";
-    }
-
-    // Function to close modal
-    function closeModal() {
-        document.getElementById("editStudentModal").style.display = "none";
-    }
-
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        var modal = document.getElementById("editStudentModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 </html>
