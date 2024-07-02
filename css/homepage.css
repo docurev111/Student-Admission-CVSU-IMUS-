@@ -173,6 +173,10 @@ header {
     width: 100%;
     padding: 0 2rem;
     background: transparent;
+    background-color: rgba(55, 71, 65, 0.6);
+    backdrop-filter: blur(20px);
+    opacity: 10;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -181,14 +185,15 @@ header {
 }
 
 header.scrolled {
-    background-color:rgba(58, 71, 65, 0.6); 
-    backdrop-filter: blur(15px);
+    background-color:rgb(155, 167, 156, 0.7); 
+    backdrop-filter: blur(24px);
     transition: background-color 1s ease-in-out;
-    height: 65px;
+    height: 50px;
+    
 }
 
 .logo img {
-    width: 125px; 
+    width: 45px; 
     height: auto; 
     margin-bottom: 5px;
     user-select: none;
@@ -201,14 +206,14 @@ li{
 
 .links a{
     text-decoration:none;
-    color:#3A4741;
+    color:#D5E4CF;
     font-size: 1rem;
-
+    font-weight: 600;
 }
 
 
 .links a:hover{
-    color: #D5E4CF;
+    color: #3A4741;
     transform-origin: left;
     transform: scaleX(1);
 }
@@ -229,9 +234,10 @@ li{
     justify-content: space-between;
 }
 
-.navbar .logo a{
+.navbar .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    color: #D5E4CF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar .links{
@@ -241,7 +247,7 @@ li{
 }
 
 .navbar .toggle_btn{
-    color: black;
+    color: #D5E4CF;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
@@ -252,7 +258,7 @@ li{
     text-decoration:none;
     color: #D5E4CF;
     font-size: 1rem;
-    background-color: #3A4741;
+    background-color: #586760;
     padding: 0.5rem 1rem;
     margin-bottom: 10px;
     border: none;
@@ -311,8 +317,13 @@ li{
 
 .dropdown_menu a{
     text-decoration:none;
-    color: #3A4741;
+    color: #D5E4CF;
     font-size: 1rem;
+    font-weight: 600;
+}
+
+.dropdown_menu a:hover{
+    color: #3A4741;
 }
 
 
@@ -392,7 +403,7 @@ li{
     margin-left: 100px;
 }
 
-.line{
+.linee{
     width: 100px;
     height: 4px;
     background: white;
@@ -416,6 +427,19 @@ li{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card-body h5 {
+    margin-top: 10px;
+    color: #FCF7EC;
+    font-size: 15px;
+}
+
+.card-body p{
+    color: #D5E4CF;
+    font-size: 16px;
+
 }
 
 
@@ -442,6 +466,11 @@ li{
   .left {
     flex: 1;
     padding: 20px;
+  }
+
+  .admission{
+    text-decoration: none;
+    color:#AFC2AE ;
   }
   
   .right {
@@ -480,8 +509,8 @@ li{
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   }
   
   /* Responsive adjustments */
@@ -520,7 +549,7 @@ li{
     margin-left: 100px;
 }
 
-.line{
+.lineee{
     width: 100px;
     height: 4px;
     background: white;
@@ -847,7 +876,7 @@ li{
     margin-left: 100px;
 }
 
-.line {
+.lineeee {
     width: 100px;
     height: 4px;
     background: white;
@@ -1011,13 +1040,15 @@ li{
     color: black;
     font-size: 24px;
     margin-bottom: 20px;
+    margin-left: 100px;
 }
 
-.line {
+.lline {
     width: 100px;
     height: 4px;
     background: black;
     margin-bottom: 20px;
+    margin-left: 100px;
 }
 
 .discover-items {
@@ -1080,4 +1111,149 @@ li{
     .line {
         margin: 0 auto 20px auto;
     }
+}
+
+/* Footer */
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer-row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+
+.footer{
+	margin-top: auto;
+	background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 70px 0;
+	background: inherit;
+    background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
+    background-size: cover;
+    background-position: center;
+	width: 100%;
+	position: absolute;
+}
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/footerbgg.png'); /* Adjust the background image path */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 0; 
+    background-image: url('../images/footerbgg.png'); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto; 
+	box-sizing: border-box; 
+	z-index: 1; 
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-left: 0px;
+	font-weight: 500;
+	position: relative;
+}
+
+img.footer-logo{
+	text-align: center;
+	width: 250px;
+	height: 120px;
+	margin-bottom:auto;
+}
+
+img.footer-icon{
+	margin-top: 40px;
+	width: 150px;
+	height: 150px;
+	height: 30vh;
+	margin-top: 30px;
+}
+
+img.footer-icon {
+	margin-top: 40px;
+    width: 180px;
+    height: auto;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }

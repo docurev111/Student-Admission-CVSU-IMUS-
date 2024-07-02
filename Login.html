@@ -17,51 +17,50 @@
 	<title>Login</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="image/schoolicon.ico">
-    <link rel="stylesheet" href="css/navbar.css"/>
+    <!-- <link rel="stylesheet" href="css/navbar.css"/> -->
 	<link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/footer.css"/>
 </head>
 <body>
-	<header>
-		<div class="headerContainer">
-			<header class="nav-header">
-				<div class="navbar">
-					<div class="logo"><a href="#">
-						<img class = "nav_logo"
-						img src="images/schoolnewlogo.png" 
-						alt="Cavite State University Logo"
-                        >
-					</a></div>
-					<ul class="links">
-						<li><a href="home.html">HOME</a></li>
-						<li><a href="About.html">ABOUT CVSU</a></li>
-						<li><a href="#">ADMISSION</a></li>
-						<li><a href="#">ACADEMICS</a></li>
-						<li><a href="#">CONTACTS</a></li>
-					</ul>
-					<a href="" class="action_button">Get Started</a>
-					<div class="toggle_btn">
-						<i class="fa-solid fa-bars"></i>
-					</div>
-				</div>
-					
-				</div> 
-	
-				<div class="dropdown_menu">
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">ABOUT CVSU</a></li>
-					<li><a href="#">ADMISSION</a></li>
-					<li><a href="#">ACADEMICS</a></li>
-					<li><a href="#">CONTACTS</a></li>
-					<li><a href="" class="action_button">Get Started</a></li>
-				</div></div>
-</header>
+    <div class="headerContainer ">
+        <header>
+            
+            <div class="navbar">
+                <div class="logo">
+                    <img class = "nav_logo"
+                    img src="images/schoolnewlogo.png" >CVSU
+                </div>
+                <ul class="links">
+                    <li><a href="/home.html">HOME</a></li>
+                    <li><a href="/About.html">ABOUT CVSU</a></li>
+                    <li><a href="/Admissions.html">ADMISSION</a></li>
+                    <li><a href="/course.html">ACADEMICS</a></li>
+                    <li><a href="/contact.html">CONTACTS</a></li>
+                </ul>
+                <a href="/Login.html" class="action_button">Get Started</a>
+                    <!-- <button class="btnLogin-popup"><a href="#">Login</a></button> -->
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+                
+    </div> 
+            
+    <div class="dropdown_menu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT CVSU</a></li>
+        <li><a href="#">ADMISSION</a></li>
+        <li><a href="#">ACADEMICS</a></li>
+        <li><a href="#">CONTACTS</a></li>
+        <li><a href="" class="action_button">Get Started</a></li>
+    </div>
+        </header>
 <main>
     <div class="wrapper">
         <div class="container main">
             <div class="row">
                 <div class="col-md-6 side-image">
-                    <img class = "logo" img src="images/schoolicon.png" alt="logo-top-left">
+                    <img class = "logo" img src="/images/schoolnewlogo.png" alt="logo-top-left" width="80px" height="60px">
                     <div class="text">
                             <p><i></i></p>
                         </div>
@@ -83,17 +82,17 @@
                             <input type="submit" class="submit" value="Login">
                        </div> 
                        <div class="signin">
-                        <span>Don't have an account? <a href="#">Register Here</a></span>
+                        <span>Don't have an account? <a href="/RegisterPage.html">Register Here</a></span>
                        </div>
                     </div>
                     </div>
                     <div class = "dropdown_menu">
-                        <li><a href="hero">Home</a></li>
-                        <li><a href="about">About CVSU</a></li>
-                        <li><a href="admissions">Admissions</a></li>
-                        <li><a href="academics">Academics</a></li>
-                        <li><a href="contacts">Contacts</a></li>
-                        <li><a href = "#" class = "action_btn">Get Started</a></li>
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="/About.html">About CVSU</a></li>
+                        <li><a href="/Admissions.html">Admissions</a></li>
+                        <li><a href="/course.html">Academics</a></li>
+                        <li><a href="/contact.html">Contacts</a></li>
+                        <li><a href = "/Login.html" class = "action_btn">Get Started</a></li>
 </div></div>
 	</div>
 </main>
@@ -133,31 +132,26 @@
 </div>
 </footer>	
 </section>
-<script src="css/about.js"></script>
 <script>
-const toggleBtn = document.querySelector('.toggle_btn')
-const toggleBtnIcon = document.querySelector('.toggle_btn i')
-const dropDownMenu = document.querySelector('.dropdown_menu')
-
-toggleBtn.onclick = function () {
-dropDownMenu.classList.toggle('open')
-const isOpen = dropDownMenu.classList.contains('open')
-
-toggleBtnIcon.classlist = isOpen
-	? "fa-solid fa-xmark"
-	: "fa-solid fa-bars"
-}
-
-</script>
-<script>
-window.addEventListener('scroll', function () {
-var header = document.querySelector('.nav-header');
-if (window.scrollY > 0) {
-	header.classList.add('scrolled');
-} else {
-	header.classList.remove('scrolled');
-}
-});
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+    
+    toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open');
+        const isOpen = dropDownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+    
 </script>
 </body>
 </html>

@@ -51,16 +51,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+/* body {
     background-image: url('../images/schoolbg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Ensure the background stays in place */
+    background-attachment: fixed; 
     background-position: center;
-    min-height: 100vh; /* Ensure body covers the full viewport height */
+    min-height: 100vh; 
     display: flex;
-    flex-direction: column; /* Ensure the footer stays at the bottom */
-}
+    flex-direction: column; 
+} */
 
 /*start of header*/
 .nav-header {
@@ -70,6 +70,9 @@ body {
     width: 100%;
     padding: 0 2rem;
     background: transparent;
+    background-color: rgba(55, 71, 65, 0.6);
+    backdrop-filter: blur(20px);
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,24 +81,19 @@ body {
 }
 
 .nav-header.scrolled {
-    background-color:rgba(58, 71, 65, 0.6); 
+    background-color:rgb(155, 167, 156, 0.7); 
     backdrop-filter: blur(15px);
     transition: background-color 1s ease-in-out;
-    height: 65px;
+    height: 50px;
 }
 
 .logo img {
-    height: auto;
+    width: 45px; 
+    height: auto; 
     margin-bottom: 5px;
     user-select: none;
 }
 
-img.nav_logo {
-    width: 125px;
-    height: auto;
-    margin-bottom: 5px;
-    user-select: none;
-}
 
 li{
     list-style: none;
@@ -104,20 +102,20 @@ li{
 
 .links a{
     text-decoration:none;
-    color:#3A4741;
+    color:#D5E4CF;
     font-size: 1rem;
-
+    font-weight: 600;
 }
 
 
 .navbar .links a:hover {
-    color: #D5E4CF;
+    color: #3A4741;
     transform-origin: left;
     transform: scaleX(1);
 }
 
 .navbar{
-    margin-top: 20px;
+
     width: 100%;
     height: 60px;
     max-width: 1200px;
@@ -142,9 +140,13 @@ li{
     color: #3A4741;
 }
 
-.navbar .logo a{
+.navbar .logo {
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
-    font-weight: bold;
+    color: #D5E4CF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar .links{
@@ -154,7 +156,7 @@ li{
 }
 
 .navbar .toggle_btn{
-    color: black;
+    color: #D5E4CF;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
@@ -165,7 +167,7 @@ li{
     text-decoration:none;
     color: #D5E4CF;
     font-size: 1rem;
-    background-color: #3A4741;
+    background-color: #586760;
     padding: 0.5rem 1rem;
     margin-bottom: 10px;
     border: none;
@@ -224,8 +226,13 @@ li{
 
 .dropdown_menu a{
     text-decoration:none;
-    color: #3A4741;
+    color: #D5E4CF;
     font-size: 1rem;
+    font-weight: 600;
+}
+
+.dropdown_menu a:hover{
+    color: #3A4741;
 }
 
 /* Display Flex Container */
