@@ -1,24 +1,51 @@
 <?php
- $email = $_POST['email'];
- $password = $_POST['password'];
- 
- $con = new mysqli ("localhost", "root", "", "db_users");
- if($con->connect_error){
-    die("Failed to connect : ".$con->connect_error);
- }else{
-    $stmt = $con->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt_result = $stmt->get_result();
-    if($stmt_result->num_rows > 0){
-        $data =  $stmt_result->fetch_assoc();
-        if($data['password'] === $password){
-            echo "<h2>Login Success</h2>";
-        } else {
-            echo "<h2>Invalid Email or Password!</h2>"; 
-        }
-    } else {
-        echo "<h2>Invalid Email or Password!</h2>";
-    }
- }
+session_start();
+
+// Clear any previous session errors
+unset($_SESSION['error']);
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cvsuadmissionsystem";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Collecting form data
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+// Fetching user data from personalinformation table
+$sql = "SELECT student_id FROM accountinformation WHERE email = ? AND password = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $email, $password);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+    $stmt->bind_result($student_id);
+    $stmt->fetch();
+
+    // Storing student_id in session
+    $_SESSION['student_id'] = $student_id;
+    $_SESSION['firstname'] = $firstname;
+    $_SESSION['lastname'] = $lastname;
+
+    // Redirecting to student dashboard
+    header("Location: studentdashh.php");
+    exit();
+} else {
+    $error = "Invalid email or password.";
+    $_SESSION['error'] = $error;
+    header("Location: login.html");
+    exit();
+}
+
+$stmt->close();
+$conn->close();
 ?>
