@@ -1,25 +1,9 @@
 <?php
+
 // load_action.php
 require_once('connect.php');
 
-if (isset($_GET['student_id'])) {
-    $student_id = $_GET['student_id'];
 
-    // Use $student_id in your SQL query
-    // Example:
-    $sql = $con->query("SELECT * FROM `personalinformation` WHERE `student_id` = '$student_id'") or die(mysqli_error($con));
-
-    // Process $sql further as needed
-    // ...
-    // Output the result or HTML content
-    
-} else {
-    echo "Error: student_id not set in the request.";
-}
-?>
-
-
-<?php
 // Assume this file receives a student_id parameter via GET request
 
 // Check if student_id is set in the request
@@ -33,7 +17,13 @@ if (isset($_GET['student_id'])) {
     }
 
     // Prepare and execute SQL query
-    $sql = "SELECT * FROM personalinformation WHERE student_id = '$student_id'";
+    $sql = "SELECT *
+            FROM personalinformation as pi
+            INNER JOIN accountinformation as ai ON pi.student_id = ai.student_id
+            INNER JOIN admissioninformation as adi ON pi.student_id = adi.student_id
+            INNER JOIN educationalbackground as eb ON pi.student_id = eb.student_id
+            INNER JOIN familybackground as fb ON pi.student_id = fb.student_id
+            WHERE pi.student_id = '$student_id'";
     $result = mysqli_query($con, $sql); 
 
     // Check if query execution was successful
@@ -162,17 +152,17 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="father-name">Father's Name</label>
-            <input type="text" id="father-name" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="father-name" name="LNAME" value="<?php echo $row['father_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="fcontact">Contact #</label>
-                <input type="text" id="fcontact" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="fcontact" name="FNAME" value="<?php echo $row['father_contact_number']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="foccupation">Occupation</label>
-                <input type="text" id="foccupation" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="foccupation" name="MNAME" value="<?php echo $row['father_occupation']; ?>" required>
             </div>
 
         </div> 
@@ -180,17 +170,17 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="mother-name">Mother's Name</label>
-            <input type="text" id="mother-name" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="mother-name" name="LNAME" value="<?php echo $row['mother_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="mcontact">Contact #</label>
-                <input type="text" id="mcontact" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="mcontact" name="FNAME" value="<?php echo $row['mother_contact_number']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="moccupation">Occupation</label>
-                <input type="text" id="moccupation" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="moccupation" name="MNAME" value="<?php echo $row['mother_occupation']; ?>" required>
             </div>
 
         </div> 
@@ -199,17 +189,17 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="gaurdian-name">Gaurdian's Name</label>
-            <input type="text" id="gaurdian-name" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="gaurdian-name" name="LNAME" value="<?php echo $row['guardian_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="gcontact">Contact #</label>
-                <input type="text" id="gcontact" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="gcontact" name="FNAME" value="<?php echo $row['guardian_contact_number']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="goccupation">Occupation</label>
-                <input type="text" id="goccupation" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="goccupation" name="MNAME" value="<?php echo $row['guardian_occupation']; ?>" required>
             </div>
 
         </div> 
@@ -222,22 +212,22 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="eschoolname">School Name</label>
-            <input type="text" id="eschoolname" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="eschoolname" name="LNAME" value="<?php echo $row['elementary_school_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="eschooladd">School Address</label>
-                <input type="text" id="eschooladd" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="eschooladd" name="FNAME" value="<?php echo $row['elementary_school_address']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="eyear">Year Graduated</label>
-                <input type="text" id="eyear" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="eyear" name="MNAME" value="<?php echo $row['elementary_year_graduated']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="etype">Type</label>
-                <input type="text" id="etype" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="etype" name="MNAME" value="<?php echo $row['elementary_type']; ?>" required>
             </div>
             
         </div> 
@@ -247,22 +237,22 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="hschoolname">School Name</label>
-            <input type="text" id="hschoolname" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="hschoolname" name="LNAME" value="<?php echo $row['high_school_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="hschooladd">School Address</label>
-                <input type="text" id="hschooladd" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="hschooladd" name="FNAME" value="<?php echo $row['high_school_address']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="hyear">Year Graduated</label>
-                <input type="text" id="hyear" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="hyear" name="MNAME" value="<?php echo $row['high_school_year_graduated']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="htype">Type</label>
-                <input type="text" id="htype" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="htype" name="MNAME" value="<?php echo $row['high_school_type']; ?>" required>
             </div>
         </div> 
 
@@ -271,22 +261,22 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="shschoolname">School Name</label>
-            <input type="text" id="shschoolname" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="shschoolname" name="LNAME" value="<?php echo $row['senior_high_school_name']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="shschooladd">School Address</label>
-                <input type="text" id="shschooladd" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="shschooladd" name="FNAME" value="<?php echo $row['senior_high_school_address']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="shyear">Year Graduated</label>
-                <input type="text" id="shyear" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="shyear" name="MNAME" value="<?php echo $row['senior_high_school_year_graduated']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="shtype">Type</label>
-                <input type="text" id="shtype" name="MNAME" value="<?php echo $row['mn']; ?>" required>
+                <input type="text" id="shtype" name="MNAME" value="<?php echo $row['senior_high_school_type']; ?>" required>
             </div>
         </div> 
         <hr>
@@ -297,12 +287,12 @@ if (isset($_GET['student_id'])) {
             
             <div class="user-input-box">
             <label for="preffered-course">Preffered Course</label>
-            <input type="text" id="preffered-course" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="preffered-course" name="LNAME" value="<?php echo $row['preferred_course']; ?>" required>
             </div>
 
             <div class="user-input-box">
                 <label for="lrn">Learner's Reference Number</label>
-                <input type="text" id="lrn" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="lrn" name="FNAME" value="<?php echo $row['lrn']; ?>" required>
             </div>
             
         </div> 
@@ -311,12 +301,12 @@ if (isset($_GET['student_id'])) {
             
             <!-- <div class="user-input-box">
             <label for="lname">Preffered Course</label>
-            <input type="text" id="lname" name="LNAME" value="<?php echo $row['lastname']; ?>" required>
+            <input type="text" id="lname" name="LNAME" value="" required>
             </div>
 
             <div class="user-input-box">
                 <label for="fname">Learner's Reference Number</label>
-                <input type="text" id="fname" name="FNAME" value="<?php echo $row['firstname']; ?>" required>
+                <input type="text" id="fname" name="FNAME" value="" required>
             </div> -->
             
         </div>
