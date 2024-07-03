@@ -1,25 +1,26 @@
-<<<<<<< HEAD
+
 /* Ensure .card-container fits within the main content area with padding */
 .card-container {   
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(15, minmax(35px, auto));
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
     gap: 10px;
     margin: 0 auto;
     padding: 10px; /* Add padding */
     height: auto;
-    background-color: #fff5de;
-=======
-.card-container {   
+    background-color: #fffdf7;
+    
+}
+
+/* .card-container {   
     width: 100%;
     display: grid;
     grid-template-rows: repeat(9, 35px);
-    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 9), 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 9), 1fr));
     margin: 0 auto; 
     height: auto;
->>>>>>> 0f2b36535ef9eb90e64538b07a25204bb6f6cbb1
-}
+
+} */
 
 .card {
     display: flex;
@@ -27,12 +28,12 @@
     align-items: flex-start;
     padding: 20px; /* Increase padding */
     border: 1px solid #ccc;
-    
     margin: 3px 5px;
     border-radius: 5px;
-    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .textcontent {
     display: flex;
@@ -77,7 +78,7 @@ canvas {
 }
 
 .card1 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     backdrop-filter: blur(24px);
     grid-column-start: 1;
     grid-column-end: 4;
@@ -86,7 +87,7 @@ canvas {
 }
 
 .card2 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
@@ -94,7 +95,7 @@ canvas {
 }
 
 .card3 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 1;
@@ -102,7 +103,7 @@ canvas {
 }
 
 .card4 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 3;
@@ -110,7 +111,7 @@ canvas {
 }
 
 .card5 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 3;
@@ -118,7 +119,7 @@ canvas {
 }
 
 .card6 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 5;
@@ -126,23 +127,47 @@ canvas {
 }
 
 .card7 {
-    background-color: #FCF7EC;
+    background-color: #f9f9f9;
     grid-column-start: 1;
     grid-column-end: 10;
     grid-row-start: 10;
     grid-row-end: 15;
-<<<<<<< HEAD
+}
+/* announcment style */
+.anndiv {
+    width: 100%;
+    background-color: #fffdf7;
+    text-align: center;
 }
 
-.card img {
-    width: 2rem;
-    height: 2rem;
+.anndiv .announcement-container {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 96%;
+    margin: 0 auto;
+    height: 3.5rem;
 }
 
-@media (max-width: 1280px) {
+.anndiv .announcement-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.anndiv .announcement-content {
+    font-size: 12px;
+    color: #666;
+}
+
+.anndiv .no-announcement {
+    color: #999;
+    font-style: italic;
+}
+
+@media (max-width: 1294px) {
     /* Adjust grid areas for large tablets */
     .card-container {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         padding: 8px; /* Adjust padding */
     }
 
@@ -151,7 +176,7 @@ canvas {
     }
 
     .tcheading {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .card .bx {
@@ -171,7 +196,7 @@ canvas {
     }
 
     .tcheading {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .card .bx {
@@ -210,6 +235,10 @@ canvas {
     .card {
         padding: 12px; /* Adjust padding */
     }
+
+    .anndiv .announcement-container{
+        height: 4rem;
+    }
 }
 
 @media (max-width: 375px) {
@@ -242,35 +271,4 @@ canvas {
     .card {
         padding: 10px; /* Adjust padding */
     }
-=======
-}
-/* announcment style */
-.anndiv {
-    width: 100%;
-    text-align: center;
-}
-
-.anndiv .announcement-container {
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    width: 96%;
-    margin: 0 auto;
-    height: 2.5rem;
->>>>>>> 0f2b36535ef9eb90e64538b07a25204bb6f6cbb1
-}
-
-.anndiv .announcement-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.anndiv .announcement-content {
-    font-size: 12px;
-    color: #666;
-}
-
-.anndiv .no-announcement {
-    color: #999;
-    font-style: italic;
 }

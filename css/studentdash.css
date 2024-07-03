@@ -54,6 +54,15 @@ i{
     color: #2a342a;
 }
 
+.header-right{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    font-weight: 900;
+    color: #2a342a;
+    font-size: 13px;
+}
+
 
 /* ---------- SIDEBAR ------------- */
 #sidebar{
@@ -93,10 +102,10 @@ i span{
     padding: 15px;
 }
 
-.sidebar-brand{
+.sidebar-brand h3{ 
+    font-size: 24px;
     padding-top: 10px;
-    font-size: 40px;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,10 +113,7 @@ i span{
 
 }
 
-.sidebar-brand > i{
-    font-size: 50px;
-    
-}
+
 
 .sidebar-list{
     padding: 0;
@@ -144,6 +150,7 @@ i span{
     grid-area: main;
     overflow-y: auto;
     padding: 20px 20px;
+    background-color: #fffdf7;
 }
 
 main-content {

@@ -6,8 +6,9 @@
     gap: 10px; /* Add space between grid items */
     margin: auto;
     height: auto;
-    background-color: white;
+    background-color: #f9f9f9;
     justify-items: center; /* Center grid items horizontally */
+    
     
 }
 
@@ -17,8 +18,9 @@
     margin: 0 auto;
     align-items: center;
     width: 100%;
-    background-color: #fffcf5;
-   
+    background-color: #f9f9f9;
+
+    
 }
 
 .content, .title-div, .title-div2 {
@@ -115,7 +117,7 @@
     margin: auto;
     align-items: center;
     width: 100%;
-    background-color: #fffcf5;
+    background-color: #f9f9f9;
 }
 
 .container {

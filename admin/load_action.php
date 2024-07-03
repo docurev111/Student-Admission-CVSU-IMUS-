@@ -4,11 +4,11 @@
 require_once('connect.php');
 
 
-// Assume this file receives a student_id parameter via GET request
-
 // Check if student_id is set in the request
 if (isset($_GET['student_id'])) {
     $student_id = $_GET['student_id'];
+
+    // Assume this file receives a student_id parameter via GET request
 
     // Check connection
     if (mysqli_connect_errno()) {
@@ -24,7 +24,7 @@ if (isset($_GET['student_id'])) {
             INNER JOIN educationalbackground as eb ON pi.student_id = eb.student_id
             INNER JOIN familybackground as fb ON pi.student_id = fb.student_id
             WHERE pi.student_id = '$student_id'";
-    $result = mysqli_query($con, $sql); 
+    $result = mysqli_query($con, $sql);
 
     // Check if query execution was successful
     if ($result) {
@@ -33,7 +33,8 @@ if (isset($_GET['student_id'])) {
 
         // Output the form HTML with fetched data
         ?>
-        <form id="edit-form">
+
+        <form id="edit-form" method="post" action="update_status.php">
         <!-- personal information -->
         <h3>Personal Information</h3 style="padding-top:10px;padding-bottom:200px"><br>
         <div class="input-container">
@@ -311,16 +312,51 @@ if (isset($_GET['student_id'])) {
             
         </div>
 
+
+        <!-- Approve modal Modal -->
+        <div id="approveModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Are you sure you want to approve this student?</p>
+                <div class="modal-buttons">
+                    <input type="hidden" id="studentId" name="student_id" value="">
+                    <button type="submit" name="confirm_approve">Yes, Approve</button>
+                    <button type="button" class="closeBtn" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+        </div>      
+        
+        <!-- The Modal -->
+        <div id="rejectModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeRejectModal()">&times;</span>
+                <p>Why do you want to reject this student?</p>
+                <div class="reject-reasons">
+                    <label><input type="checkbox" name="reject_reason[]" value="Incomplete Records"> Incomplete Records</label><br>
+                    <label><input type="checkbox" name="reject_reason[]" value="Unverifiable Documents"> Unverifiable Documents</label><br>
+                    <label><input type="checkbox" name="reject_reason[]" value="Insufficient Qualifications"> Insufficient Qualifications</label><br>
+                    <label><input type="checkbox" name="reject_reason[]" value="Does Not Meet Eligibility Criteria"> Does Not Meet Eligibility Criteria</label><br>
+                </div>
+                <div class="modal-buttons">
+                    <input type="hidden" id="rejectStudentId" name="student_id" value="">
+                    <button type="submit" name="confirm_reject">Yes, Reject</button>
+                    <button type="button" class="closeBtn" onclick="closeRejectModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         </form>
         <?php
-
+        
+        
         // Free result set
         mysqli_free_result($result);
-    } else {
-        echo "Error: " . mysqli_error($con);
-    }
+            } else {
+                echo "Error: " . mysqli_error($con);
+            }
 
-    // Close database connection
-    mysqli_close($con);
-}
+            // Close database connection
+            mysqli_close($con);
+        }
+        
 ?>
