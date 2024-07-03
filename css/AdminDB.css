@@ -1,22 +1,26 @@
-
-/* Ensure .card-container fits within the main content area */
+/* Ensure .card-container fits within the main content area with padding */
 .card-container {   
-    width: 97%;
+    width: 100%;
     display: grid;
-    grid-template-rows: repeat(15, 35px);
-    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 9), 1fr)); /* Responsive columns */
-    margin: 0 auto; 
-    height: 81vh;
+    grid-template-rows: repeat(15, minmax(35px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 10px;
+    margin: 0 auto;
+    padding: 10px; /* Add padding */
+    height: auto;
+    background-color: #fff5de;
 }
+
 .card {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    align-items: flex-start;
+    padding: 20px; /* Increase padding */
     border: 1px solid #ccc;
+    
     margin: 3px 5px;
     border-radius: 5px;
-    background-color: #FFF;
+    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,12 +30,11 @@
 }
 
 .tcheading {
-    font-size: 1.2em;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .description {
-
     margin-top: 5px;
 }
 
@@ -41,6 +44,8 @@
 }
 
 .card1 {
+    background-color: #FCF7EC;
+    backdrop-filter: blur(24px);
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -48,20 +53,23 @@
 }
 
 .card2 {
+    background-color: #FCF7EC;
     grid-column-start: 4;
-    grid-column-end: 7;
+    grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .card3 {
-    grid-column-start: 7;
+    background-color: #FCF7EC;
+    grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .card4 {
+    background-color: #FCF7EC;
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 3;
@@ -69,6 +77,7 @@
 }
 
 .card5 {
+    background-color: #FCF7EC;
     grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 3;
@@ -76,6 +85,7 @@
 }
 
 .card6 {
+    background-color: #FCF7EC;
     grid-column-start: 6;
     grid-column-end: 10;
     grid-row-start: 5;
@@ -83,10 +93,120 @@
 }
 
 .card7 {
+    background-color: #FCF7EC;
     grid-column-start: 1;
     grid-column-end: 10;
     grid-row-start: 10;
-    grid-row-end: 16;
+    grid-row-end: 15;
 }
 
+.card img {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media (max-width: 1280px) {
+    /* Adjust grid areas for large tablets */
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        padding: 8px; /* Adjust padding */
+    }
+
+    .card {
+        padding: 16px; /* Adjust padding */
+    }
+
+    .tcheading {
+        font-size: 15px;
+    }
+
+    .card .bx {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust grid areas for medium screens */
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        padding: 6px; /* Adjust padding */
+    }
+
+    .card {
+        padding: 14px; /* Adjust padding */
+    }
+
+    .tcheading {
+        font-size: 14px;
+    }
+
+    .card .bx {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 744px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        padding: 6px; /* Adjust padding */
+    }
+
+    .tcheading {
+        font-size: 13px;
+    }
+
+    .card img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7";
+        padding: 4px; /* Adjust padding */
+    }
+
+    .card {
+        padding: 12px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 375px) {
+    .tcheading {
+        font-size: 8px;
+    }
+
+    .card .bx {
+        font-size: 16px;
+    }
+
+    .card img {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7";
+        padding: 2px; /* Adjust padding */
+    }
+
+    .card {
+        padding: 10px; /* Adjust padding */
+    }
+}
 

@@ -24,15 +24,12 @@
     <div class="wrapper">
         <div class="sidebar">
             <div class="top">
-                <div class="logo">
-                    <i class='bx bxs-cog' style="padding-right: 10px;"></i>
-                    <span>Admission System</span>
+            <div class="logo">
+                    <h2>Admin <br> Admission</h2>
                 </div>
                 <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
             </div>
-            <div class="user">
-                <p>Admin Name</p>
-            </div>
+            
             <ul>
                 <li>
                     <a href="AdminDashboard.php">
@@ -50,7 +47,7 @@
                 </li>
                 </li>
                 <li>
-                    <a href="AdminAnnouncement.html">
+                    <a href="AdminAnnouncement.php">
                         <i class='bx bxs-bell-ring'></i>
                         <span class="nav-item">Announcement</span>
                     </a>
@@ -68,13 +65,12 @@
         
         <div class="main-content">
             <div class="tophead">
-                <div class="toplogo">
-                    <img src="../images/cvsulogo.png" style="width: 50px; height: 50px;">
-                    <H2 style="color: white;">CvSU Imus</H2>
+            <div class="toplogo">
+                    <img src="../images/cvsulogo.png" alt="" width="60px" height="50px" >CVSU
                 </div>
             </div>
                 <div class="container">
-                    <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Admissions</p>
+                    
                     <div class="white-container">
                     <!-- Modal for student info -->
                     
