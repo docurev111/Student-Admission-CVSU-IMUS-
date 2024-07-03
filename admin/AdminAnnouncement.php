@@ -59,12 +59,7 @@
     <div class="main-content">
         <div class="tophead">
             <div class="toplogo">
-<<<<<<< HEAD
                 <img src="../images/cvsulogo.png" alt="" width="60px" height="50px" >CVSU
-=======
-                <img src="" style="width: 50px; height: 50px;">
-                <h2 style="color: white;">CvSU Imus</h2>
->>>>>>> 4738f93c8e68099e6fea965be6eeb316229d09df
             </div>
         </div>
         <div class="container">
