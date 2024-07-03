@@ -142,69 +142,13 @@
                                 </div>
                                 <div class="custom-modal-body" id="edit_query"></div>
                                 <div class="custom-modal-footer">
-                                    <button type="button" class="btn-reject"><b>Reject</b></button>
-                                    <form method="post">
-                                        <button type="submit" name="approve" class="btn-approve"><b>Approve</b></button>
-
-                                        <!-- The Modal -->
-                                        <div id="approveModal" class="modal">
-                                            <div class="modal-content">
-                                                <span class="close">&times;</span>
-                                                <p>Are you sure you want to approve this student?</p>
-                                                <div class="modal-buttons">
-                                                    <input type="hidden" id="studentId" name="student_id" value="">
-                                                    <button type="submit" name="confirm_approve">Yes, Approve</button>
-                                                    <button type="button" class="closeBtn">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                    <?php
-                                    // Check if confirm_approve button is clicked
-                                    if (isset($_POST['confirm_approve'])) {
-                                        // Retrieve student ID from POST data
-                                        $studentId = $_POST['student_id'];
-
-                                        // Perform database update query
-                                        $sql = "UPDATE students SET status = 'Approved' WHERE student_id = ?";
-                                        $stmt = $con->prepare($sql);
-                                        $stmt->bind_param("i", $studentId);
-
-                                        if ($stmt->execute()) {
-                                            echo "<script>alert('Student status updated successfully.');</script>";
-                                        } else {
-                                            echo "<script>alert('Error updating student status.');</script>";
-                                        }
-
-                                        // Close statement and database connection
-                                        $stmt->close();
-                                        $con->close();
-                                    }
-                                    ?>
+                                    <button type="button" class="btn-approve" onclick="openModal()">Approve</button>
+                                    <button type="button" class="btn-reject" onclick="openRejectModal()"><b>Reject</b></button>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-
-                    <!-- modal for confirmatio napprove -->
-                    <div id="approveModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>Are you sure you want to approve this student?</p>
-                            <div class="modal-buttons">
-                                <form method="post">
-                                    <input type="hidden" id="studentId" name="student_id" value="">
-                                    <button type="submit" name="approve" id="confirmApproveBtn">Yes, Approve</button>
-                                    <button type="button" class="closeBtn">Cancel</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-
                     <!-- end -->
                         <div class="table-container">
                         <table id="example" class="display">
@@ -349,5 +293,45 @@
             sidebar.classList.toggle('active');
         };
     </script>
+
+    <!-- approve code -->
+
+    <script>
+        function openModal() {
+            var modal = document.getElementById("approveModal");
+            modal.style.display = "block";
+
+            // Get the student ID from the input field
+            var studentId = document.getElementById("id").value;
+
+            // Set the student ID value dynamically
+            document.getElementById("studentId").value = studentId;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("approveModal");
+            modal.style.display = "none";
+        }
+    </script>
+<!-- script for reject -->
+    <script>
+        function openRejectModal() {
+            var modal = document.getElementById("rejectModal");
+            modal.style.display = "block";
+
+            // Get the student ID from the input field
+            var studentId = document.getElementById("id").value;
+
+            // Set the student ID value dynamically
+            document.getElementById("rejectStudentId").value = studentId;
+        }
+
+        function closeRejectModal() {
+            var modal = document.getElementById("rejectModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+
 
 </html>
