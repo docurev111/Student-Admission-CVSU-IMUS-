@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2024 at 03:46 PM
+-- Generation Time: Jul 03, 2024 at 06:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,11 +81,11 @@ CREATE TABLE `admissioninformation` (
 
 INSERT INTO `admissioninformation` (`admission_id`, `student_id`, `preferred_course`, `status`, `lrn`, `rejection_reason`) VALUES
 (1, 1, 'Computer Science', 'Approved', '123456789012', NULL),
-(2, 2, 'Business Administration', 'Approved', '987654321098', NULL),
+(2, 2, 'Business Administration', 'Rejected', '987654321098', NULL),
 (3, 3, 'Education', 'Approved', '456789012345', NULL),
 (4, 4, 'Nursing', 'Approved', '789012345678', NULL),
 (5, 5, 'Architecture', 'Approved', '234567890123', NULL),
-(6, 6, 'Law', 'Pending', '345678901234', NULL),
+(6, 6, 'Law', 'Approved', '345678901234', NULL),
 (7, 7, 'Mechanical Engineering', 'Approved', '567890123456', NULL),
 (8, 8, 'Biology', 'Rejected', '678901234567', NULL),
 (9, 9, 'Finance', 'Pending', '890123456789', NULL),
@@ -224,6 +224,19 @@ INSERT INTO `familybackground` (`family_id`, `student_id`, `father_name`, `fathe
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `id_pic`
+--
+
+CREATE TABLE `id_pic` (
+  `photo_id` int(11) NOT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `id_name` varchar(255) DEFAULT NULL,
+  `id_file` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `personalinformation`
 --
 
@@ -275,6 +288,19 @@ INSERT INTO `personalinformation` (`student_id`, `firstname`, `middlename`, `las
 (19, 'Ivy', 'J.', 'Anderson', '', '1999-08-05', 'City R', 'F', 'Region 5', 'Province R', 'Town R', 'Baranggay R', 'Street R', '5000', '09261234567', '1234576', NULL, 'Married', 'Jewish'),
 (20, 'Jack', 'K.', 'Thomas', '', '2001-03-28', 'City Q', 'M', 'Region 3', 'Province Q', 'Town Q', 'Baranggay Q', 'Street Q', '3000', '09271234567', '1234577', NULL, 'Single', 'Agnostic');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `report_card`
+--
+
+CREATE TABLE `report_card` (
+  `card_id` int(11) NOT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `report_card_name` varchar(255) DEFAULT NULL,
+  `report_card_file` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -314,10 +340,24 @@ ALTER TABLE `familybackground`
   ADD KEY `student_id` (`student_id`);
 
 --
+-- Indexes for table `id_pic`
+--
+ALTER TABLE `id_pic`
+  ADD PRIMARY KEY (`photo_id`),
+  ADD KEY `student_id` (`student_id`);
+
+--
 -- Indexes for table `personalinformation`
 --
 ALTER TABLE `personalinformation`
   ADD PRIMARY KEY (`student_id`);
+
+--
+-- Indexes for table `report_card`
+--
+ALTER TABLE `report_card`
+  ADD PRIMARY KEY (`card_id`),
+  ADD KEY `student_id` (`student_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -354,10 +394,22 @@ ALTER TABLE `familybackground`
   MODIFY `family_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT for table `id_pic`
+--
+ALTER TABLE `id_pic`
+  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `personalinformation`
 --
 ALTER TABLE `personalinformation`
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `report_card`
+--
+ALTER TABLE `report_card`
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -386,6 +438,18 @@ ALTER TABLE `educationalbackground`
 --
 ALTER TABLE `familybackground`
   ADD CONSTRAINT `familybackground_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `personalinformation` (`student_id`);
+
+--
+-- Constraints for table `id_pic`
+--
+ALTER TABLE `id_pic`
+  ADD CONSTRAINT `id_pic_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `personalinformation` (`student_id`);
+
+--
+-- Constraints for table `report_card`
+--
+ALTER TABLE `report_card`
+  ADD CONSTRAINT `report_card_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `personalinformation` (`student_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
