@@ -18,7 +18,7 @@
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
-                    <h2>Admin <br> Dashboard</h2>
+                    <h4>Admin Dashboard</h4>
                 </div>
                 <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
             </div>

@@ -10,8 +10,8 @@ if (isset($_POST['confirm_approve'])) {
     $stmt->bind_param("i", $studentId);
 
     if ($stmt->execute()) {
-        header("Location: adminadmission.php");
         echo "<script>alert('Student status updated successfully.');</script>";
+        header("Location: AdminAdmission.php");
     } else {
         echo "<script>alert('Error updating student status.');</script>";
     }

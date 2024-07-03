@@ -1,23 +1,22 @@
 <?php
-require_once('connect.php');
+require_once('connect.php'); // Include database connection
+
 if (isset($_POST['confirm_reject'])) {
- 
-    // Get student ID and rejection reasons from POST
     $studentId = $_POST['student_id'];
-    $reasons = isset($_POST['reject_reason']) ? $_POST['reject_reason'] : [];
 
-    // Update query
-    $query = "UPDATE students SET status = 'Rejected', rejection_reasons = '" . implode(", ", $reasons) . "' WHERE student_id = '$studentId'";
+    // Perform database update query
+    $sql = "UPDATE `admissioninformation` SET status = 'Rejected' WHERE student_id = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("i", $studentId);
 
-    // Execute the query
-    if ($con->query($query) === TRUE) {
-        echo "<script>alert('Student status updated to Rejected successfully.');
-              window.location.href = 'adminadmission.php';</script>";
+    if ($stmt->execute()) {
+        echo "<script>alert('Student status updated successfully.');</script>";
+        header("Location: AdminAdmission.php");
     } else {
-        echo "<script>alert('Error updating student status: " . $con->error . "');</script>";
+        echo "<script>alert('Error updating student status.');</script>";
     }
 
-    // Close connection
+    $stmt->close();
     $con->close();
 }
 ?>

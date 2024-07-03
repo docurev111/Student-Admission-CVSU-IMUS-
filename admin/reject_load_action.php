@@ -34,7 +34,7 @@ if (isset($_GET['student_id'])) {
         // Output the form HTML with fetched data
         ?>
 
-        <form id="edit-form" method="post" action="update_status.php">
+        <form id="edit-form" method="post" action="update_reject_status.php">
         <!-- personal information -->
         <h3>Personal Information</h3 style="padding-top:10px;padding-bottom:200px"><br>
         <div class="input-container">
@@ -313,18 +313,18 @@ if (isset($_GET['student_id'])) {
         </div>
 
 
-        <!-- Approve modal Modal -->
-        <div id="approveModal" class="modal">
+        <!-- Reject modal Modal -->
+        <div id="rejectModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <p>Are you sure you want to approve this student?</p>
+                <span class="close" onclick="closeRejectModal()">&times;</span>
+                <p>Are you sure you want to reject this student?</p>
                 <div class="modal-buttons">
                     <input type="hidden" id="studentId" name="student_id" value="">
-                    <button type="submit" name="confirm_approve">Yes, Approve</button>
-                    <button type="button" class="closeBtn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" name="confirm_reject">Yes, Reject</button>
+                    <button type="button" class="closeBtn" onclick="closeRejectModal()">Cancel</button>
                 </div>
             </div>
-        </div>      
+        </div>     
         
 
         </form>

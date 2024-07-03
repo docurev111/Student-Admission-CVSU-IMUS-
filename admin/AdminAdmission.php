@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="../css/actionmodal.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
-        
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"/>
         <style>
@@ -85,9 +84,7 @@
                 </div>
                 <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
             </div>
-            <div class="user">
-                <p>Admin Name</p>
-            </div>
+           
             <ul>
                 <li>
                     <a href="AdminDashboard.php">
@@ -105,7 +102,7 @@
                 </li>
                 </li>
                 <li>
-                    <a href="AdminAnnouncement.html">
+                    <a href="AdminAnnouncement.php">
                         <i class='bx bxs-bell-ring'></i>
                         <span class="nav-item">Announcement</span>
                     </a>
@@ -131,7 +128,7 @@
                 <div class="container">
                     <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Admissions</p>
                     <div class="white-container">
-                    <!-- Modal for student info -->
+                    <!-- Modal for student info approve -->
                     
                     <div class="custom-modal" id="custom-modal" tabindex="-1" role="dialog" aria-labelledby="myModallabel">
                         <div class="custom-modal-dialog" role="document">
@@ -143,13 +140,33 @@
                                 <div class="custom-modal-body" id="edit_query"></div>
                                 <div class="custom-modal-footer">
                                     <button type="button" class="btn-approve" onclick="openModal()">Approve</button>
-                                    <button type="button" class="btn-reject" onclick="openRejectModal()"><b>Reject</b></button>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <!-- end -->
+
+                    <!-- Modal for rejecting student -->
+                    <div class="custom-modal" id="reject-custom-modal" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel">
+                        <div class="custom-modal-dialog" role="document">
+                            <div class="custom-modal-content">
+                                <div class="custom-modal-header">
+                                    <h4 class="custom-modal-title" id="rejectModalLabel">Reject Student</h4>
+                                    <button type="button" class="custom-close-button">Close</button>
+                                </div>
+                                <div class="custom-modal-body" id="reject_edit_query">
+                                    <!-- Content related to rejection will be loaded here -->
+                                </div>
+                                <div class="custom-modal-footer">
+                                    <button type="button" class="btn-reject" onclick="submitReject()">Reject</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
                         <div class="table-container">
                         <table id="example" class="display">
                             <thead>
@@ -160,7 +177,7 @@
                                     <th>Phone #</th>
                                     <th>Course</th>
                                     <th>Status</th>
-                                    <th>View</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -189,9 +206,13 @@
                                     <!-- modal buttons -->
                                     <td>
                                     <!-- Button to trigger the modal -->
-                                    <button type="button" class="btn-open-modal" id="btn-open-modal" name="<?php echo isset($row['student_id']) ? $row['student_id'] : ''; ?>">
-                                        <i class='bx bx-file-find'></i> Edit Student
+                                    <button type="button" class="btn-open-modal" id="btn-open-modal" style="font-size: 1rem" name="<?php echo isset($row['student_id']) ? $row['student_id'] : ''; ?>">
+                                    <i class='bx bxs-file-import'></i>
                                     </button>
+                                    <button type="button" class="btn-open-reject-modal" id="btn-open-reject-modal" style="font-size: 1rem" name="<?php echo isset($row['student_id']) ? $row['student_id'] : ''; ?>">
+                                        <i class='bx bxs-folder-minus'></i>
+                                    </button>
+
 
                                     </td> 
                                 </tr>
@@ -205,7 +226,7 @@
                                     <th>Phone #</th>
                                     <th>Course</th>
                                     <th>Status</th>
-                                    <th>View</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -282,6 +303,58 @@
 });
 
 </script>
+<!-- rejectcode -->
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select all elements with the class 'btn-open-modal'
+    var elements = document.querySelectorAll('.btn-open-reject-modal');
+
+    // Attach a click event listener to each element
+    elements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Get the value of the 'name' attribute of the clicked element
+            var STUDENT_ID = this.getAttribute('name');
+
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define the callback function to handle the response
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Insert the response into the element with id 'edit_query'
+                    document.getElementById('reject_edit_query').innerHTML = xhr.responseText;
+                    // Show the modal
+                    document.getElementById('reject-custom-modal').style.display = 'block';
+                }
+            };
+
+            // Open the request
+            xhr.open('GET', 'reject_load_action.php?student_id=' + encodeURIComponent(STUDENT_ID), true);
+
+            // Send the request
+            xhr.send();
+        });
+    });
+
+    // Close modal when the close button is clicked
+    var closeModalBtn = document.querySelector('.custom-close-button');
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            document.getElementById('reject-custom-modal').style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        var modal = document.getElementById('reject-custom-modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+</script>
 
     </body>
 
@@ -313,9 +386,9 @@
             modal.style.display = "none";
         }
     </script>
-<!-- script for reject -->
+<!-- reject code -->
     <script>
-        function openRejectModal() {
+       function submitReject() {
             var modal = document.getElementById("rejectModal");
             modal.style.display = "block";
 
@@ -323,15 +396,13 @@
             var studentId = document.getElementById("id").value;
 
             // Set the student ID value dynamically
-            document.getElementById("rejectStudentId").value = studentId;
+            document.getElementById("studentId").value = studentId;
         }
 
         function closeRejectModal() {
             var modal = document.getElementById("rejectModal");
             modal.style.display = "none";
         }
+
     </script>
-
-
-
 </html>
