@@ -56,7 +56,7 @@
     <div class="main-content">
         <div class="tophead">
             <div class="toplogo">
-                <img src="../images/cvsulogo.png" style="width: 50px; height: 50px;">
+                <img src="" style="width: 50px; height: 50px;">
                 <h2 style="color: white;">CvSU Imus</h2>
             </div>
         </div>
