@@ -116,10 +116,10 @@
                         </div>
 
                         <div class="card card4">
-                            <div class="textcontent">
-                                <div class="tcheading">Pie Chart</div>
-                            </div>
+                        <div class="pchart">
+                            <canvas id="pieChart" width="220" height="220"></canvas>
                         </div>
+                    </div>
 
                         <div class="card card5">
                             <div class="textcontent">
@@ -130,19 +130,121 @@
                         </div>
 
                         <div class="card card6">
-                            <div class="textcontent">
-                                <div class="tcheading">Line Graph</div>
+                            <div class="pchart">
+                                <canvas id="coursePieChart" width="150" height="150"></canvas>
                             </div>
                         </div>
 
-                        <div class="card card7">
-                            <div class="textcontent">
-                                <div class="tcheading">Announcment</div>
-                            </div>
-                        </div>
                     </div>
+                    <div class="anndiv">
+                    <?php
+                        // Fetch announcements from the database
+                        $result = $con->query("SELECT * FROM announcements WHERE deleted=0");
+
+                        // Check if there are announcements
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Output each announcement with CSS containers
+                                echo '<div class="announcement-container">';
+                                echo '<div class="announcement-title">' . htmlspecialchars($row['title']) . '</div>';
+                                echo '<div class="announcement-content">' . htmlspecialchars($row['content']) . '</div>';
+                                echo '</div>';
+                                echo '<br>';
+                            }
+                        } else {
+                            // Handle case when no announcements are available
+                            echo '<p class="no-announcement">No announcements available.</p>';
+                        }
+
+                        // Close database connection
+                        $con->close();
+                        ?>
+                        </div>
                 </div>
+
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        fetch('fetch_data.php')
+            .then(response => response.json())
+            .then(data => {
+            // Process data for course pie chart
+            const courseLabels = data.course_chart.map(item => item.preferred_course);
+            const courseValues = data.course_chart.map(item => item.count);
+
+            const ctxCoursePie = document.getElementById('coursePieChart').getContext('2d');
+            const coursePieChart = new Chart(ctxCoursePie, {
+                type: 'pie',
+                data: {
+                labels: courseLabels,
+                datasets: [{
+                    label: 'Preferred Courses',
+                    data: courseValues,
+                    backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                    
+                    ],
+                    borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                responsive: true,
+                maintainAspectRatio: false
+                }
+            });
+
+            // Initialize the existing pie chart (pieChart) if needed
+            const pieData = data.pie_chart;
+
+            const ctxPie = document.getElementById('pieChart').getContext('2d');
+            const pieChart = new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                labels: ['Approved', 'Pending', 'Rejected'],
+                datasets: [{
+                    label: 'Admission Status',
+                    data: [pieData.approved, pieData.pending, pieData.rejected],
+                    backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                responsive: true,
+                maintainAspectRatio: false
+                }
+            });
+            })
+            .catch(error => console.error('Error fetching or parsing data:', error));
+        });
+
+</script>
+
+
+
+
     </body>
 
     <script>
