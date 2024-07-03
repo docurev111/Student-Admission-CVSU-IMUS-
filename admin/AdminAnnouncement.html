@@ -54,14 +54,6 @@
                 </li>
             </ul>
         </div>
-        <!-- confirmation for logout -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-              <p>Do you want to proceed?</p>
-              <button id="yesBtn">Yes</button>
-              <button id="noBtn">No</button>
-            </div>
-          </div>
         
         <div class="main-content">
             <div class="tophead">
@@ -70,87 +62,61 @@
                     <H2 style="color: white;">CvSU Imus</H2>
                 </div>
             </div>
-                <div class="container">
-                    <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Announcement</p>
-                    <div class="white-container">
-                        <div class="card-container">
-                            <div class="announcements">
-                                <div class="title-div">
-                                    <p style="font-size: 18px;font-family: 'Times New Roman', Times, serif; padding-bottom: 5px;">Announcements</p>
-                                    <input type="text" id="title" class="title-box" name="textbox">
-                                </div>
-                                <div class="content">
-                                    <input type="text" id="content" class="content-box" name="textbox">
-                                </div>
-                                <div class="btn-div">
-                                    <button class="btn btnprev"><b>Previous</b></button>
-                                    <button class="btn btnpdel"><b>Delete</b></button>
-                                    <button class="btn btnclear"><b>Clear</b></button>
-                                    <button class="btn btnup"><b>Update</b></button>
-                                    <button class="btn btnnext"><b>Next</b></button>
-                                </div>
-                                <br><hr>
+            <div class="container">
+                <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px;">Announcement</p>
+                <div class="white-container">
+                    <div class="card-container">
+                        <div class="announcements">
+                            <?php
+                            require_once('connect.php');
+    
+                            // Get the current announcement index from the query parameter or default to 0
+                            $current = isset($_GET['current']) ? (int)$_GET['current'] : 0;
+    
+                            // Fetch all announcements
+                            $result = $con->query("SELECT * FROM announcements ORDER BY created_at DESC");
+                            $announcements = $result->fetch_all(MYSQLI_ASSOC);
+    
+                            // Get the total number of announcements
+                            $total = count($announcements);
+    
+                            // Calculate previous and next indices
+                            $prev = ($current > 0) ? $current - 1 : $total - 1;
+                            $next = ($current < $total - 1) ? $current + 1 : 0;
+    
+                            // Display the current announcement
+                            if ($total > 0) {
+                                $announcement = $announcements[$current];
+                                echo "<div class='title-div'><p style='font-size: 18px;font-family: Times New Roman, Times, serif; padding-bottom: 5px;'>{$announcement['title']}</p></div>";
+                                echo "<div class='content'><p>{$announcement['content']}</p></div>";
+                            } else {
+                                echo "No announcements available.";
+                            }
+                            ?>
+                            <div class="btn-div">
+                                <a href="?current=<?php echo $prev; ?>" class="btn btnprev"><b>Previous</b></a>
+                                <a href="?current=<?php echo $next; ?>" class="btn btnnext"><b>Next</b></a>
                             </div>
-                            
-                            <div class="make-announcement">
+                            <br><hr>
+                        </div>
+    
+                        <div class="make-announcement">
+                            <form method="POST" action="add_announcement.php">
                                 <div class="title-div2">
                                     <p style="font-size: 18px;font-family: 'Times New Roman', Times, serif; padding-bottom: 5px;">Make Announcement</p>
-                                    <input type="text" id="title2" class="title-box" name="textbox">
+                                    <input type="text" id="title2" class="title-box" name="title" placeholder="Title:" required>
                                 </div>
                                 <div class="content">
-                                    <input type="text" id="content2" class="content-box" name="textbox">
+                                    <textarea id="content2" class="content-box" name="content" placeholder="Content" required></textarea>
                                 </div>
                                 <div class="btn-div-mka">
-                                    <button class="btn btnpost"><b>Update</b></button>
+                                    <button type="submit" class="btn btnpost"><b>Post</b></button>
                                 </div>
-                            </div>
-                            
+                            </form>
                         </div>
                     </div>
-                    
                 </div>
-        </div>
+            </div>
     </body>
     
-    <script>
-        let btn = document.querySelector('#btn')
-        let sidebar = document.querySelector('.sidebar')
-
-        btn.onclick = function () {
-            sidebar.classList.toggle('active');
-        };
-    </script>
-    <!-- modal -->
-    <script>
-        var modal = document.getElementById("myModal");
-
-        // Get the buttons that open the modal
-        var btnYes = document.getElementById("yesBtn");
-        var btnNo = document.getElementById("noBtn");
-
-        // Get the logout link
-        var logoutLink = document.getElementById("logoutLink");
-
-        // When the user clicks the logout link, open the modal
-        logoutLink.onclick = function(event) {
-            event.preventDefault(); // Prevent the default behavior of the link
-            modal.style.display = "block"; // Open the modal
-        }
-
-        // When the user clicks the Yes or No button, keep the modal open
-        btnYes.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        btnNo.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </html>
