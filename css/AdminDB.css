@@ -12,7 +12,7 @@
     
 }
 
-/* .card-container {   
+.card-container {   
     width: 100%;
     display: grid;
     grid-template-rows: repeat(9, 35px);
@@ -20,7 +20,7 @@
     margin: 0 auto; 
     height: auto;
 
-} */
+}
 
 .card {
     display: flex;
@@ -89,15 +89,15 @@ canvas {
 .card2 {
     background-color: #f9f9f9;
     grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .card3 {
     background-color: #f9f9f9;
-    grid-column-start: 6;
-    grid-column-end: 10;
+    grid-column-start: 7;
+    grid-column-end: 16;
     grid-row-start: 1;
     grid-row-end: 3;
 }
@@ -113,7 +113,7 @@ canvas {
 .card5 {
     background-color: #f9f9f9;
     grid-column-start: 6;
-    grid-column-end: 10;
+    grid-column-end: 16;
     grid-row-start: 3;
     grid-row-end: 5;
 }
@@ -121,7 +121,7 @@ canvas {
 .card6 {
     background-color: #f9f9f9;
     grid-column-start: 6;
-    grid-column-end: 10;
+    grid-column-end: 16;
     grid-row-start: 5;
     grid-row-end: 10;
 }

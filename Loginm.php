@@ -57,12 +57,12 @@
 		<div class="headerContainer">
 			<header class="nav-header">
 				<div class="navbar">
-					<div class="logo"><a href="#">
-						<img class = "nav_logo"
+					<div class="logo">
+                    <a href="Loginm.php"><img class = "nav_logo"
 						img src="images/schoolnewlogo.png" 
 						alt="Cavite State University Logo"
-                        >
-					</a></div>
+                        ></a>
+					</div>
 					<ul class="links">
 						<li><a href="home.html">HOME</a></li>
 						<li><a href="About.html">ABOUT CVSU</a></li>
@@ -84,7 +84,7 @@
 					<li><a href="#">ADMISSION</a></li>
 					<li><a href="#">ACADEMICS</a></li>
 					<li><a href="#">CONTACTS</a></li>
-					<li><a href="" class="action_button">Get Started</a></li>
+					<li><a href="#" class="action_button">Get Started</a></li>
 				</div></div>
 </header>
 <main>

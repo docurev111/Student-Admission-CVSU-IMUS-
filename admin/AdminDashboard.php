@@ -49,7 +49,7 @@
                     <span class="tooltip">Announcement</span>
                 </li>   
                 <li>
-                    <a href="">
+                    <a href="../AdminLogin.php">
                         <i class='bx bxs-exit' ></i>
                         <span class="nav-item">Logout</span>
                     </a>
@@ -62,7 +62,7 @@
             <div class="tophead">
             
                 <div class="toplogo">
-                    <img src="../images/cvsulogo.png" alt="" width="60px" height="50px" >CVSU
+                    <img src="../images/cvsulogo.png" alt="" width="40px" height="40px" >CVSU
                 </div>
             </div>
                 <!-- get data from db -->

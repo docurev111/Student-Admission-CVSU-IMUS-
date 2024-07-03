@@ -9,7 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 120%;
     width: 80px;
     background-color: rgb(90, 131, 108);
     padding: .4rem .8rem;
@@ -117,17 +117,18 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .sidebar .nav-item {
     opacity: 0;
     font-size: 0;
+    
 }
 
 .sidebar.active .nav-item {
     opacity: 1;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .sidebar ul li .tooltip {

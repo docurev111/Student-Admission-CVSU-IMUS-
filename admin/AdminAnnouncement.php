@@ -47,7 +47,7 @@
                 <span class="tooltip">Announcement</span>
             </li>   
             <li>
-                <a href="#" id="logoutLink">
+                <a href="../AdminLogin.php" id="logoutLink">
                     <i class='bx bxs-exit'></i>
                     <span class="nav-item">Logout</span>
                 </a>

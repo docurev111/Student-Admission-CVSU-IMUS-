@@ -108,7 +108,7 @@
                     <span class="tooltip">Announcement</span>
                 </li>   
                 <li>
-                    <a href="">
+                    <a href="../AdminLogin.php">
                         <i class='bx bxs-exit' ></i>
                         <span class="nav-item">Logout</span>
                     </a>
