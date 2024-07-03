@@ -19,7 +19,7 @@
     <div class="sidebar">
         <div class="top">
             <div class="logo">
-                <h2>Admin <br> Announcement</h2>
+                <h3>Admin <br> Announcement</h3>
             </div>
             <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
         </div>

@@ -29,9 +29,9 @@
                 <li>
                     <a href="AdminDashboard.php">
                         <i class='bx bxs-home'></i>
-                        <span class="nav-item">Home</span>
+                        <span class="nav-item">Dashboard</span>
                     </a>
-                    <span class="tooltip">Home</span>
+                    <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
                     <a href="AdminAdmission.php">
@@ -95,7 +95,7 @@
                                 <div class="tcheading">Recieved</div>
                                 <div class="description"><?php echo $count;?></div>
                             </div>
-                            <img src="../images/recieved.png" >
+                            <img src="../images/recieved.png" width="30rem" height="30rem" >
                         </div>
 
                         <div class="card card2">
@@ -103,7 +103,7 @@
                                 <div class="tcheading">Pending</div>
                                 <div class="description"><?php echo $pending;?></div>
                             </div>
-                            <img src="../images/pending.png">
+                            <img src="../images/pending.png" width="30rem" height="30rem">
                         </div>
 
                         <div class="card card3">
@@ -111,7 +111,7 @@
                                 <div class="tcheading">Approved</div>
                                 <div class="description"><?php echo $approved;?></div>
                             </div>
-                            <img src="../images/approve.png">
+                            <img src="../images/approve.png" width="30rem" height="30rem">
                         </div>
 
                         <div class="card card4">
@@ -125,7 +125,7 @@
                                 <div class="tcheading">Rejected</div>
                                 <div class="description"><?php echo $rejected;?></div>
                             </div>
-                            <img src="../images/reject.png">
+                            <img src="../images/reject.png" width="30rem" height="30rem" >
                         </div>
 
                         <div class="card card6">
