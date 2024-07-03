@@ -1,0 +1,92 @@
+
+/* Ensure .card-container fits within the main content area */
+.card-container {   
+    width: 97%;
+    display: grid;
+    grid-template-rows: repeat(15, 35px);
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 9), 1fr)); /* Responsive columns */
+    margin: 0 auto; 
+    height: 81vh;
+}
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 3px 5px;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textcontent {
+    display: flex;
+    flex-direction: column;
+}
+
+.tcheading {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.description {
+
+    margin-top: 5px;
+}
+
+.card .bx {
+    font-size: 24px;
+    color: #333;
+}
+
+.card1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.card2 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.card3 {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.card4 {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 10;
+}
+
+.card5 {
+    grid-column-start: 6;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.card6 {
+    grid-column-start: 6;
+    grid-column-end: 10;
+    grid-row-start: 5;
+    grid-row-end: 10;
+}
+
+.card7 {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 10;
+    grid-row-end: 16;
+}
+
+
