@@ -4,4 +4,26 @@
     border-radius: 7px;
     margin: 0 auto; 
     height: 81vh;
+    padding: 15px;
+}
+.btnview {
+    color: white;
+    height: 2rem;
+    width: 2rem;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* Override Bootstrap's table header padding */
+.table thead th {
+    padding: 0.75rem 0.5rem; /* Adjust these values as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Make the table headers responsive */
+.table {
+    width: 100%;
+    table-layout: fixed; /* Ensures columns have a fixed width */
 }

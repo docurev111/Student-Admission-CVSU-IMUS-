@@ -10,7 +10,7 @@
     left: 0;
     height: 100vh;
     width: 80px;
-    background-color: #176e01ea;
+    background-color: #048830;
     padding: .4rem .8rem;
     transition: all 0.5s ease;
     font-weight: 1000;
@@ -139,14 +139,16 @@
     display: none;
 }
 
-.main-content {
+ .main-content {
     position: relative;
     min-height: 100vh;
     left: 80px;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
     z-index: 1;
-}
+    overflow-x: hidden;
+} 
+
 
 .sidebar.active ~ .main-content {
     left: 250px;
@@ -154,7 +156,7 @@
 }
 
 .tophead {
-    background-color: #4f7c44ea;
+    background-color: #036323;
     min-height: 70px;
     width: 100%;
     display: flex;
@@ -177,3 +179,13 @@
     width: 100%;
     overflow: hidden;
 }
+  
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }

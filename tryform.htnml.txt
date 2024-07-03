@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Modal Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="modal-container" id="modal">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h2>Edit Student Information</h2>
+        </div>
+        <div class="modal-body">
+            <form id="edit-form">
+                <label for="lrn">LRN</label>
+                <input type="text" id="lrn" name="LRN" required>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="LNAME" required>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="FNAME" required>
+                <label for="mname">Middle Initial</label>
+                <input type="text" id="mname" name="MNAME" required>
+                <button type="submit" class="btn-submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<button class="btn-open-modal" id="btn-open-modal">Edit Student</button>
+
+<script src="script.js"></script>
+</body>
+</html>

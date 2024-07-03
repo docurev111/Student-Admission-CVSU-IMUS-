@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@500&display=swap');
 
 :root{
     --header-height: 3.5rem;
@@ -47,9 +47,9 @@
 
 /* =====BASE====== */
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
 }
 
 html{
@@ -141,7 +141,7 @@ img{
 .nav__close{
     display: flex;
     font-size: 1.25rem;
-    color: var(--title-color);
+    color: var(--body-color);
     cursor: pointer;
 }
 /* Navigation for mobile */
@@ -185,7 +185,48 @@ img{
     top: 0;
 }
 
+/* Blur Header */
+.blur-header::after{
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, .3);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 /* ==== MAIN ==== */
+#home{
+    position: relative;
+}
+
+#carouselExampleSlidesOnly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 2s ease, opacity .5s ease-in-out;
+}
+
+Carousel
+.bg-image-1{
+    background-image: url(/images/1bg1.png);
+}
+
+.bg-image-2{
+    background-image: url(/images/1bg2.png);
+}
+
+.bg-image-3{
+    background-image: url(/images/1bg3.png);
+}
 
 .carousel-item {
     height: 100vh;
@@ -193,6 +234,71 @@ img{
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 2s ease, opacity .5s ease-in-out;
+} 
 
+.home__shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: linear-gradient(180deg,
+                hsla(0,0%,0%,0)68%,
+                hsla(125, 6%, 63%, 1)78%);
 }
+
+.home__container{
+    position: relative;
+    padding-top: 3rem;
+    row-gap: 3rem;
+}
+
+.home__data{
+    text-align: center;
+}
+
+.home__subtitle{
+    font-size: var(--h3-font-size);
+    margin-bottom: .5rem;
+}
+
+.home__title{
+    font-size: var(--biggest-font-size);
+    margin-bottom: 1rem;
+}
+
+.home__description{
+    margin-bottom: 2rem;
+    color: var(--title-color);
+}
+
+.home__cards{
+    grid-template-columns: 240px;
+    justify-content: center;
+}
+
+.home__card{
+    position: relative;
+    overflow: hidden;
+}
+
+.home__card-image{
+    transition: transform .4s;
+}
+
+.home__card-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0;background: 
+    linear-gradient(180deg,
+                    hsla(0,0%,0%,0)50%,
+                    hsla(152, 10%, 25%, 1)125%);
+}
+
+.home__card:hover .home__card-img{
+    transform: scale(1.1);
+}
+
+
 
