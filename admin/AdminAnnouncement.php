@@ -8,19 +8,22 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/AdminAnnouncement.css">
     <link rel="stylesheet" href="../css/Admintemp.css">
+
 </head>
 <body>
+    
+    <style>
+        <?php include"css/AdminAnnouncement.css"?>
+    </style>
+
     <div class="sidebar">
         <div class="top">
             <div class="logo">
-                <i class='bx bxs-cog' style="padding-right: 10px;"></i>
-                <span>Admission System</span>
+                <h2>Admin <br> Announcement</h2>
             </div>
             <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
         </div>
-        <div class="user">
-            <p>Admin Name</p>
-        </div>
+        
         <ul>
             <li>
                 <a href="AdminDashboard.php">
@@ -30,14 +33,14 @@
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href="AdminAdmission.html">
+                <a href="AdminAdmission.php">
                     <i class='bx bxs-file-blank'></i>
                     <span class="nav-item">Admission</span>
                 </a>
                 <span class="tooltip">Admission</span>
             </li>
             <li>
-                <a href="AdminAnnouncement.html">
+                <a href="AdminAnnouncement.php">
                     <i class='bx bxs-bell-ring'></i>
                     <span class="nav-item">Announcement</span>
                 </a>
@@ -56,12 +59,16 @@
     <div class="main-content">
         <div class="tophead">
             <div class="toplogo">
+<<<<<<< HEAD
+                <img src="../images/cvsulogo.png" alt="" width="60px" height="50px" >CVSU
+=======
                 <img src="" style="width: 50px; height: 50px;">
                 <h2 style="color: white;">CvSU Imus</h2>
+>>>>>>> 4738f93c8e68099e6fea965be6eeb316229d09df
             </div>
         </div>
         <div class="container">
-            <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px;">Announcement</p>
+           
             <div class="white-container">
                 <div class="card-container">
                     <div class="announcements">
