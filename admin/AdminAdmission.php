@@ -18,7 +18,62 @@
         
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"/>
-        
+        <style>
+            .custom-modal-footer {
+            display: flex;
+            justify-content: flex-end; /* Align items to the end (right side) */
+        }
+
+        .custom-modal-footer .btn-approve,
+        .custom-modal-footer .btn-reject {
+            margin-left: 10px; /* Optional: Add space between buttons */
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .modal-buttons {
+            margin-top: 20px;
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        </style>
     </head>
     <body>
     <div class="wrapper">
@@ -83,11 +138,68 @@
                                 </div>
                                 <div class="custom-modal-body" id="edit_query"></div>
                                 <div class="custom-modal-footer">
-                                    <button type="submit" class="btn-submit">Save</button>
+                                    <button type="button" class="btn-reject"><b>Reject</b></button>
+                                    <form method="post">
+                                        <button type="submit" name="approve" class="btn-approve"><b>Approve</b></button>
+
+                                        <!-- The Modal -->
+                                        <div id="approveModal" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Are you sure you want to approve this student?</p>
+                                                <div class="modal-buttons">
+                                                    <input type="hidden" id="studentId" name="student_id" value="">
+                                                    <button type="submit" name="confirm_approve">Yes, Approve</button>
+                                                    <button type="button" class="closeBtn">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <?php
+                                    // Check if confirm_approve button is clicked
+                                    if (isset($_POST['confirm_approve'])) {
+                                        // Retrieve student ID from POST data
+                                        $studentId = $_POST['student_id'];
+
+                                        // Perform database update query
+                                        $sql = "UPDATE students SET status = 'Approved' WHERE student_id = ?";
+                                        $stmt = $con->prepare($sql);
+                                        $stmt->bind_param("i", $studentId);
+
+                                        if ($stmt->execute()) {
+                                            echo "<script>alert('Student status updated successfully.');</script>";
+                                        } else {
+                                            echo "<script>alert('Error updating student status.');</script>";
+                                        }
+
+                                        // Close statement and database connection
+                                        $stmt->close();
+                                        $con->close();
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- modal for confirmatio napprove -->
+                    <div id="approveModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Are you sure you want to approve this student?</p>
+                            <div class="modal-buttons">
+                                <form method="post">
+                                    <input type="hidden" id="studentId" name="student_id" value="">
+                                    <button type="submit" name="approve" id="confirmApproveBtn">Yes, Approve</button>
+                                    <button type="button" class="closeBtn">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
 
                     <!-- end -->
                         <div class="table-container">
@@ -220,8 +332,6 @@
         }
     });
 });
-
-
 
 </script>
 

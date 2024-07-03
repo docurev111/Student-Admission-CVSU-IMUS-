@@ -105,7 +105,7 @@ if (isset($_GET['student_id'])) {
 
             <div class="user-input-box">
                 <label for="baranggay">Baranggay</label>
-                <input type="text" id="baranggay" name="MNAME" value="<?php echo $row['barangay']; ?>" required>
+                <input type="text" id="baranggay" name="MNAME" value="<?php echo $row['baranggay']; ?>" required>
             </div>
 
             <div class="user-input-box">
