@@ -11,20 +11,21 @@
         <title>Admin Dashboard</title>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         
-        <link rel="stylesheet" href="../css/AdminDB.css">
-        <link rel="stylesheet" href="../css/Admintemp.css">
+        <link rel="stylesheet" href="css/AdminDB.css">
+        <link rel="stylesheet" href="css/Admintemp.css">
     </head>
     <body>
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
-                    <h2>Admin <br> Dashboard</h2>
+                    <i class='bx bxs-cog' style="padding-right: 10px;"></i>
+                    <span>Admission System</span>
                 </div>
                 <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
             </div>
-            <!-- <div class="user">
+            <div class="user">
                 <p>Admin Name</p>
-            </div> -->
+            </div>
             <ul>
                 <li>
                     <a href="AdminDashboard.php">
@@ -42,7 +43,7 @@
                 </li>
                 </li>
                 <li>
-                    <a href="AdminAnnouncement.php">
+                    <a href="AdminAnnouncement.html">
                         <i class='bx bxs-bell-ring'></i>
                         <span class="nav-item">Announcement</span>
                     </a>
@@ -60,9 +61,9 @@
         
         <div class="main-content">
             <div class="tophead">
-            
                 <div class="toplogo">
-                    <img src="../images/cvsulogo.png" alt="" width="60px" height="50px" >CVSU
+                    <img src="images/cvsulogo.png" style="width: 50px; height: 50px;">
+                    <H2 style="color: white;">CvSU Imus</H2>
                 </div>
             </div>
                 <!-- get data from db -->
@@ -87,15 +88,15 @@
 
                 ?>
                 <div class="container">
-                    
+                    <p style="font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 10px 0px 10px 22px ;">Dashboard</p>
                     
                     <div class="card-container">
                         <div class="card card1">
                             <div class="textcontent">
-                                <div class="tcheading">Recieved</div>
+                                <div class="tcheading">Recieved Application</div>
                                 <div class="description"><?php echo $count;?></div>
                             </div>
-                            <img src="../images/recieved.png" >
+                            <img src="images/recieved.png" style="height:2.5rem;width:2.5rem;">
                         </div>
 
                         <div class="card card2">
@@ -103,7 +104,7 @@
                                 <div class="tcheading">Pending</div>
                                 <div class="description"><?php echo $pending;?></div>
                             </div>
-                            <img src="../images/pending.png">
+                            <img src="images/pending.png" style="height:2.5rem;width:2.5rem;">
                         </div>
 
                         <div class="card card3">
@@ -111,7 +112,7 @@
                                 <div class="tcheading">Approved</div>
                                 <div class="description"><?php echo $approved;?></div>
                             </div>
-                            <img src="../images/approve.png">
+                            <img src="images/approve.png" style="height:2.5rem;width:2.5rem;">
                         </div>
 
                         <div class="card card4">
@@ -125,7 +126,7 @@
                                 <div class="tcheading">Rejected</div>
                                 <div class="description"><?php echo $rejected;?></div>
                             </div>
-                            <img src="../images/reject.png">
+                            <img src="images/reject.png" style="height:3rem;width:3rem;">
                         </div>
 
                         <div class="card card6">

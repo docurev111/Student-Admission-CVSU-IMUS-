@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 .sidebar {
@@ -10,10 +11,11 @@
     left: 0;
     height: 100vh;
     width: 80px;
-    background-color: #048830;
+    background-color: rgb(90, 131, 108);
     padding: .4rem .8rem;
     transition: all 0.5s ease;
     font-weight: 1000;
+    
 }
 
 .sidebar.active ~ .main-content {
@@ -27,7 +29,7 @@
 
 .sidebar #btn {
     position: absolute;
-    color: #fff;
+    color: rgba(52, 78, 54, 0.929);
     top: .4rem;
     left: 50%;
     font-size: 1.2rem;
@@ -43,10 +45,18 @@
 .sidebar .top .logo {
     color: #fff;
     display: flex;
+    flex-direction: row;
     height: 50px;
     width: 100%;
     align-items: center;
     opacity: 0;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: start;
+    color: #2a342a;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .sidebar.active .top .logo {
@@ -82,14 +92,18 @@
     width: 90%;
     margin: 0.8rem auto; /* Fixed margin issue */
     line-height: 50px;
+    
+    
+
 }
 
 .sidebar ul li a {
-    color: #fff;
+    color: rgba(209, 253, 212, 0.929);
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 0.8rem;
+    
 }
 
 .sidebar ul li a:hover {
@@ -103,6 +117,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
+    font-size: 25px;
 }
 
 .sidebar .nav-item {
@@ -129,6 +144,7 @@
     background-color: #fff;
     color: #000000;
     border: 1px solid;
+    
 }
 
 .sidebar ul li a:hover + .tooltip {
@@ -147,6 +163,7 @@
     width: calc(100% - 80px);
     z-index: 1;
     overflow-x: hidden;
+    background-color: #fff5de;
 } 
 
 
@@ -156,26 +173,35 @@
 }
 
 .tophead {
-    background-color: #036323;
+    background-color: #aec7ae;
     min-height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
+    font-weight: 900;
+    color: #2a342a;
+    padding-left: 20px;
+    font-size: 13px;
+    
 }
 
 .toplogo {
-    left: 15px;
-    position: relative;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width: 180px;
+
 }
+
+.toplogo h2{
+    font-weight: 900;
+    color: #2a342a;
+}
+
+
 
 .container {
     position: relative;
-    background-color: #dad6d6;
-    height: 89.5vh;
+    background-color: #fff5de;
     width: 100%;
     overflow: hidden;
 }
@@ -184,8 +210,14 @@
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
+    background-color: #aec7ae;
+    border-radius: 20px;
+    border-color: #aec7ae;
   }
   
   button:hover {
-    background-color: #ddd;
+    background-color: #fff0d1;
   }
+
+
+
