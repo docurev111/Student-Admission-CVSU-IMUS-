@@ -11,7 +11,9 @@
     background-color: #fffdf7;
     
 }
-
+.sidebar-dashboard {
+    height: 128%;
+}
 .card-container {   
     width: 100%;
     display: grid;

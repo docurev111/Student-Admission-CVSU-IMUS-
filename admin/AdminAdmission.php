@@ -132,7 +132,7 @@
                         <div class="custom-modal-dialog" role="document">
                             <div class="custom-modal-content">
                                 <div class="custom-modal-header">
-                                    <h4 class="custom-modal-title" id="myModallabel">Student Information</h4>
+                                    <h4 class="custom-modal-title" id="myModallabel">Approve Student</h4>
                                     <button type="button" class="custom-close-button">Close</button>
                                 </div>
                                 <div class="custom-modal-body" id="edit_query"></div>

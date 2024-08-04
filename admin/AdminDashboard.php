@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="../css/Admintemp.css">
     </head>
     <body>
-        <div class="sidebar">
+        <div class="sidebar dashboard" style="height:128%;">
             <div class="top">
                 <div class="logo">
-                    <h4>Admin Dashboard</h4>
+                    <h4>Admin <br> Dashboard</h4>
                 </div>
                 <i class="bx bx-menu" id="btn" style="font-size: 2rem;"></i>
             </div>

@@ -3,7 +3,7 @@ main{
 }
 
 body {
-    background-image: url(/images/kahitano.png);
+    background-image: url(../images/kahitano.png);
     background-size: cover;
     background-repeat: no-repeat;
 

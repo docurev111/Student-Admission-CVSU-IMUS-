@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url(/images/1bg2.jpg);
+    background-image: url(../images/1bg2.jpg);
     background-position: center;
     display: flex;
     justify-content: center;

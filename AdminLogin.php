@@ -45,14 +45,12 @@
             
             <div class="navbar">
                 <div class="logo">
-                <a href="Loginm.php" style="text-decoration: none; color: inherit;>
                     <img class = "nav_logo"
                     img src="images/schoolnewlogo.png" >CVSU
-                </a>
                 </div>
                 <ul class="links">
                 </ul>
-                <a href="/Login.php" class="action_button">Get Started</a>
+                <a href="" class="action_button">Get Started</a>
                     <!-- <button class="btnLogin-popup"><a href="#">Login</a></button> -->
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
@@ -76,9 +74,11 @@
         <div class="container main">
             <div class="row">
                 <div class="col-md-6 side-image">
+                    <a href="Loginm.php">
                     <img class = "logo" img src="./images/schoolnewlogo.png" alt="logo-top-left" width="80px" height="60px">
+                    </a>
                     <div class="text">
-                            <p><i></i></p>
+                    <p><i></i></p>
                         </div>
                     </div>
                     
@@ -91,7 +91,7 @@
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required class="input"><br><br>
                         <div class="input-field">
-                                <a href="admin/AdminDashboard.php"><input type="button" class="submit" value="Login"></a>
+                                <a href="admin/AdminDashboard.php"><input type="button" class="submit" value="Login" style="width: 100%";></a>
                             </div>
                     </form>
                        <div class="signin">

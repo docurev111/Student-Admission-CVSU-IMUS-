@@ -297,7 +297,6 @@ if (isset($_GET['student_id'])) {
             </div>
             
         </div> 
-        <br><h4>Report Card and 2x2</h4 style="padding-top:10px;padding-bottom:200px"><br>
         <div class="input-container">
             
             <!-- <div class="user-input-box">
