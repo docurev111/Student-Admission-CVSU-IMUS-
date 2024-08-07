@@ -1,0 +1,446 @@
+/* number */
+/* input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+margin: 0;
+} */
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body  {
+	height: 100vh;
+	background-color: white;
+	background-image: url(/images/extra14.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/*start of header*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background: transparent;
+    background-color: rgba(55, 71, 65, 0.6);
+    backdrop-filter: blur(20px);
+    opacity: 10;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    transition: all 0.5s;
+}
+
+header.scrolled {
+    background-color:rgb(155, 167, 156, 0.7); 
+    backdrop-filter: blur(24px);
+    transition: background-color 1s ease-in-out;
+    height: 50px;
+    
+}
+
+.logo img {
+    width: 45px; 
+    height: auto; 
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+.links a{
+    text-decoration:none;
+    color:#D5E4CF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.links a:hover{
+    color: #3A4741;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* header{
+    position: absolute;
+    padding: 0 2rem;
+
+} */
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #D5E4CF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    padding-top: 11px;
+}
+
+.navbar .toggle_btn{
+    color: #D5E4CF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.action_button{
+    text-decoration:none;
+    color: #D5E4CF;
+    font-size: 1rem;
+    background-color: #586760;
+    padding: 0.5rem 1rem;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_button:hover{
+    scale: 1.05;
+    color: #AFC2AE;
+}
+
+.action_button:active{
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    position: fixed;
+    right: 2rem;
+    top: 60px;
+    margin-top: 10px;
+    height: 0;
+    width: 300px;
+    background: rgba(58, 71, 65, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+}
+
+.dropdown_menu.open {
+    height: 320px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #D5E4CF;
+}
+
+.dropdown_menu a{
+    text-decoration:none;
+    color: #D5E4CF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.dropdown_menu a:hover{
+    color: #3A4741;
+}
+
+
+@media (max-width:992px) {
+    .navbar .links,
+    .navbar .action_button{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+    .card{
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home__container {
+        padding: 0 20px;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+
+    .home__subtitle,
+    .home__description {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    /* .card{
+        max-width: 80%;
+    } */
+}
+
+@media (max-width: 576px){
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+#line {
+	height: .5px;
+	background-color: rgb(147, 177, 159);
+    margin-top: 3%;
+    width: 500px;
+}
+
+
+/* fillup forms */
+#personalinformation{
+    margin-top: -30px;
+}
+
+.scroll-bg{
+	background: white;
+	width: 550px;
+}
+
+.scroll-div{
+	height: 400px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+/* personal information */
+.main-user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+
+}
+
+ .title{ 
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 10px;
+ } 
+
+
+.user-input-box {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.333% - 20px); /* Adjust width to fit three in a row with spacing */
+    margin-bottom: 15px; /* Spacing between rows */
+    padding: 0 10px; /* Padding for spacing between columns */
+
+}
+
+.user-input-box label {
+    width: 100%;
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+.user-input-box input {
+    height: 35px; /* Slightly smaller height */
+    width: 100%;
+    border-radius: 5px; /* Slightly smaller border radius */
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 8px; /* Slightly smaller padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+	background-color: #fff7e6;
+}
+
+/* educational background */
+.input-box{
+	display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px); /* For 4 text fields per row */
+    margin-bottom: 15px; /* Spacing between rows */
+    padding: 0 5px; /* Padding for spacing between columns */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+	margin-top: -15px;
+}
+
+.input-box label{
+	width: 150%;
+    font-size: 13px; /* Slightly smaller font size */	
+}
+
+.input-box input {
+    height: 30px; /* Slightly smaller height */
+    width: 100%;
+    border-radius: 3px; /* Slightly smaller border radius */
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 8px; /* Slightly smaller padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+	background-color: #fff7e6;
+}
+
+/* medical history */
+.field-box input{
+	margin-left: -7px;
+	height: 35px;
+	width: 103%;
+    border-radius: 3px; /* Slightly smaller border radius */
+    outline: none;
+    border: 1px solid grey;
+	padding: 0 8px; /* Slightly smaller padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+	background-color: #fff7e6;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: column;
+    gap: 10px; /* Adjust the gap between checkboxes as needed */
+}
+
+.checkbox-container label input[type="checkbox"] {
+    margin-right: 8px; /* Adjust the space between the checkbox and the label text */
+}
+
+.checkbox-container label {
+    width: calc(50% - 10px); /* Adjust the width according to the gap */
+    box-sizing: border-box;
+}
+
+
+
+/* admission information */
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.insert-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    width: 48%; 
+    padding-bottom: 15px;
+}
+
+.file-upload-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.insert-box label, .file-upload label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.insert-box input, .insert-box select {
+    height: 40px;
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    background-color: #fff7e6;
+}
+
+.insert-box input[type="file"], .file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.file-upload label i {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.file-upload label:hover {
+    text-decoration: underline;
+}
+
+/* button */
+.button-container {
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.btn-complete {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.btn-complete:hover {
+    background-color: #218838;
+}
+
+

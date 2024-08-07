@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Monsterrat", sans-serif;;
+    line-height: 1.6;
+    background-image: url(../images/extra11.jpg);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.container {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width:800px;
+    margin: 50px auto;
+    padding: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    color: #ffffff;
+    
+}
+
+.container h1 {
+    font-weight: 500;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+    
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.program-title {
+    font-size: 1.2em;
+    color: #f1f1f1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.program-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    
+    
+}
+
+.program-list li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 30px 10px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .intro {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .program-title {
+        font-size: 1.1em;
+    }
+
+    .program-list li {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px 5px;
+        padding: 60px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .intro {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .program-title {
+        font-size: 1em;
+    }
+
+    .program-list li {
+        font-size: 0.85em;
+    }
+}
+
+/*start of header*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background: transparent;
+    background-color: rgba(55, 71, 65, 0.6);
+    backdrop-filter: blur(20px);
+    opacity: 10;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    transition: all 0.5s;
+}
+
+header.scrolled {
+    background-color:rgb(155, 167, 156, 0.7); 
+    backdrop-filter: blur(24px);
+    transition: background-color 1s ease-in-out;
+    height: 50px;
+    
+}
+
+.logo img {
+    width: 45px; 
+    height: auto; 
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+.links a{
+    text-decoration:none;
+    color:#D5E4CF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.links a:hover{
+    color: #3A4741;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* header{
+    position: absolute;
+    padding: 0 2rem;
+
+} */
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #D5E4CF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    padding-top: 11px;
+}
+
+.navbar .toggle_btn{
+    color: #D5E4CF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.action_button{
+    text-decoration:none;
+    color: #D5E4CF;
+    font-size: 1rem;
+    background-color: #586760;
+    padding: 0.5rem 1rem;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_button:hover{
+    scale: 1.05;
+    color: #AFC2AE;
+}
+
+.action_button:active{
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    position: fixed;
+    right: 2rem;
+    top: 60px;
+    margin-top: 10px;
+    height: 0;
+    width: 300px;
+    background: rgba(58, 71, 65, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+}
+
+.dropdown_menu.open {
+    height: 320px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #D5E4CF;
+}
+
+.dropdown_menu a{
+    text-decoration:none;
+    color: #D5E4CF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.dropdown_menu a:hover{
+    color: #3A4741;
+}
+
+
+@media (max-width:992px) {
+    .navbar .links,
+    .navbar .action_button{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+    .card{
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home__container {
+        padding: 0 20px;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+
+    .home__subtitle,
+    .home__description {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    /* .card{
+        max-width: 80%;
+    } */
+}
+
+@media (max-width: 576px){
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}

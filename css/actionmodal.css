@@ -1,0 +1,130 @@
+/* Custom Modal */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Dialog */
+.custom-modal-dialog {
+    position: relative;
+    margin: auto;
+    top: 5%;
+    max-width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal Content */
+.custom-modal-content {
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* Custom Modal Header */
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Custom Close Button */
+.custom-close-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.custom-modal-body {
+    padding: 1rem;
+    overflow-y: auto;
+    margin-top: 4rem; 
+    margin-bottom: 4rem; 
+    height: calc(100% - 8rem);
+    box-sizing: border-box;
+}
+
+/* Modal Footer */
+.custom-modal-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Code for textbox */
+.user-input-box {
+    margin-bottom: 15px;
+}
+
+.user-input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* General styling for the input container */
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center; 
+}
+
+/* General styling for user-input-box */
+.user-input-box {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px; 
+    flex: 1; 
+}
+
+/* Input box general styling */
+.user-input-box input[type="text"],
+.user-input-box input[type="email"],
+.user-input-box input[type="password"],
+.user-input-box textarea {
+    padding: 10px;
+    font-size: 14px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+    width: 100%;
+    height: 2.5rem; /* Set a consistent height */
+}
+
+.user-input-box input[type="text"]:focus,
+.user-input-box input[type="email"]:focus,
+.user-input-box input[type="password"]:focus,
+.user-input-box textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+

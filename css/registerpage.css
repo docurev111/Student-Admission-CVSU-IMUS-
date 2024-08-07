@@ -1,0 +1,48 @@
+main{
+	flex: 1;
+}
+
+body {
+    background-image: url(../images/kahitano.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure body covers the full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure the footer stays at the bottom */
+}
+.wrapper{
+    padding: 10px 10%;
+}
+
+.text-above-boxes {
+	margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text-above-boxes h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.text-above-boxes p {
+    font-size: 1.2em;
+    color: #d0edc5;
+}
+.box img{
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+	opacity: 0.92;
+}
+
+@media (max-width:992px) {
+	.box-area{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

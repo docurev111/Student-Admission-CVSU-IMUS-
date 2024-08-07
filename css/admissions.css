@@ -1,0 +1,113 @@
+main{
+	flex: 1;
+}
+
+body {
+    background-image: url(../images/kahitano.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-position: center;
+    min-height: 100vh; /* Ensure body covers the full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure the footer stays at the bottom */
+}
+.wrapper{
+    padding: 10px 10%;
+}
+#card-area{
+    padding: 50px 0;
+}
+.box-area{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+	display: flex;
+	align-content: center;
+	justify-content: center;
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.box {
+	display: inline-block;
+	width: fit-content;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+	backdrop-filter: blur(24px);
+}
+.text-above-boxes {
+	margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text-above-boxes h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.text-above-boxes p {
+    font-size: 1.2em;
+    color: #d0edc5;
+}
+.box img{
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+	opacity: 0.92;
+}
+.overlay {
+	color: #fffefe;
+	width: 100%;
+	height: 0;
+	background: linear-gradient(transparent,#AFC2AE 78%);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+.overlay h3 {
+	color: #fffefe;
+	font-weight: 500;
+	margin-bottom: 5px;
+	margin-top: 80%;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.overlay a {
+	margin-top: 10px;
+	color: #000000;
+	text-decoration: none;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 50px;
+	text-align: center;
+	padding: 5px 15px;
+}
+.box:hover img{
+    transform: scale(1.1);
+}
+.box:hover .overlay{
+    height: 100%;
+}
+
+@media (max-width:992px) {
+	.box-area{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
