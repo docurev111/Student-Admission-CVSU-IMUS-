@@ -1,5 +1,9 @@
 
 /* Ensure .card-container fits within the main content area with padding */
+.main-content {
+   height: 120vh;
+} 
+
 .card-container {   
     width: 100%;
     display: grid;
@@ -8,7 +12,7 @@
     margin: 0 auto;
     padding: 10px; /* Add padding */
     height: auto;
-    background-color: #fffdf7;
+    background-color: #d3d3d3;
     
 }
 .sidebar-dashboard {
@@ -136,9 +140,13 @@ canvas {
     grid-row-end: 15;
 }
 /* announcment style */
+.announcement-container{
+    height: 200px;
+}
+
 .anndiv {
     width: 100%;
-    background-color: #fffdf7;
+    background-color: #d3d3d3;
     text-align: center;
 }
 
