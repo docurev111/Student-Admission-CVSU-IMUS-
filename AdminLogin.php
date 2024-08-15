@@ -74,7 +74,7 @@
         <div class="container main">
             <div class="row">
                 <div class="col-md-6 side-image">
-                    <a href="Loginm.php">
+                    <a href="Login.php">
                     <img class = "logo" img src="./images/schoolnewlogo.png" alt="logo-top-left" width="80px" height="60px">
                     </a>
                     <div class="text">
